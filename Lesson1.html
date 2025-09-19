@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 1: Personal Pronouns - Deutsch Lernen with Yousef Masri</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lesson-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .lesson-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .lesson-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .pronoun-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .pronoun-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .pronoun-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .pronoun-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .pronoun-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .pronoun-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .german-pronoun {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+        
+        .arabic-pronoun {
+            font-size: 1.1rem;
+            color: #666;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .pronoun-type {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .examples-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .example-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+        
+        .example-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .example-german {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .example-arabic {
+            color: #666;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .example-english {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .practice-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .practice-question {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-question h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .practice-option {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .practice-option:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .practice-option.correct {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+        
+        .practice-option.incorrect {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button {
+            background: #6c757d;
+        }
+        
+        .back-button:hover {
+            background: #5a6268;
+        }
+        
+        @media (max-width: 768px) {
+            .lesson-container {
+                padding: 1rem;
+            }
+            
+            .lesson-header h1 {
+                font-size: 2rem;
+            }
+            
+            .pronoun-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .example-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .practice-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1>Lesson 1: Personal Pronouns</h1>
+                <p>Learn German personal pronouns with Arabic translations</p>
+            </div>
+
+            <div class="pronoun-section">
+                <h2>Personal Pronouns (الضمائر الشخصية)</h2>
+                <p>Personal pronouns are words that replace nouns and refer to people or things. In German, they change based on the case (nominative, accusative, dative).</p>
+                
+                <div class="pronoun-grid">
+                    <div class="pronoun-card">
+                        <div class="pronoun-type">Nominative Case (المرفوع)</div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ich</span>
+                            <span class="arabic-pronoun">أنا</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">du</span>
+                            <span class="arabic-pronoun">أنت</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">er</span>
+                            <span class="arabic-pronoun">هو</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">sie</span>
+                            <span class="arabic-pronoun">هي</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">es</span>
+                            <span class="arabic-pronoun">هو/هي (للأشياء)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">wir</span>
+                            <span class="arabic-pronoun">نحن</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ihr</span>
+                            <span class="arabic-pronoun">أنتم</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">sie</span>
+                            <span class="arabic-pronoun">هم</span>
+                        </div>
+                    </div>
+
+                    <div class="pronoun-card">
+                        <div class="pronoun-type">Accusative Case (المنصوب)</div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">mich</span>
+                            <span class="arabic-pronoun">إياي</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">dich</span>
+                            <span class="arabic-pronoun">إياك</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ihn</span>
+                            <span class="arabic-pronoun">إياه</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">sie</span>
+                            <span class="arabic-pronoun">إياها</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">es</span>
+                            <span class="arabic-pronoun">إياه (للأشياء)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">uns</span>
+                            <span class="arabic-pronoun">إيانا</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">euch</span>
+                            <span class="arabic-pronoun">إياكم</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">sie</span>
+                            <span class="arabic-pronoun">إياهم</span>
+                        </div>
+                    </div>
+
+                    <div class="pronoun-card">
+                        <div class="pronoun-type">Dative Case (المجرور)</div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">mir</span>
+                            <span class="arabic-pronoun">لي</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">dir</span>
+                            <span class="arabic-pronoun">لك</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ihm</span>
+                            <span class="arabic-pronoun">له</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ihr</span>
+                            <span class="arabic-pronoun">لها</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ihm</span>
+                            <span class="arabic-pronoun">له (للأشياء)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">uns</span>
+                            <span class="arabic-pronoun">لنا</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">euch</span>
+                            <span class="arabic-pronoun">لكم</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ihnen</span>
+                            <span class="arabic-pronoun">لهم</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pronoun-section">
+                <h2>Articles (أدوات التعريف والتنكير) - Nominative Case</h2>
+                <p>In German, articles change based on gender and case. Here are the definite and indefinite articles in nominative case.</p>
+                
+                <div class="pronoun-grid">
+                    <div class="pronoun-card">
+                        <div class="pronoun-type">Definite Articles (أدوات التعريف)</div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">der</span>
+                            <span class="arabic-pronoun">ال (مذكر)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">die</span>
+                            <span class="arabic-pronoun">ال (مؤنث)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">das</span>
+                            <span class="arabic-pronoun">ال (محايد)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">die</span>
+                            <span class="arabic-pronoun">ال (جمع)</span>
+                        </div>
+                    </div>
+
+                    <div class="pronoun-card">
+                        <div class="pronoun-type">Indefinite Articles (أدوات التنكير)</div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ein</span>
+                            <span class="arabic-pronoun">أحد/واحد (مذكر)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">eine</span>
+                            <span class="arabic-pronoun">إحدى/واحدة (مؤنث)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ein</span>
+                            <span class="arabic-pronoun">أحد/واحد (محايد)</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">-</span>
+                            <span class="arabic-pronoun">لا يوجد (جمع)</span>
+                        </div>
+                    </div>
+
+                    <div class="pronoun-card">
+                        <div class="pronoun-type">Examples (أمثلة)</div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">der Mann</span>
+                            <span class="arabic-pronoun">الرجل</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">die Frau</span>
+                            <span class="arabic-pronoun">المرأة</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">das Kind</span>
+                            <span class="arabic-pronoun">الطفل</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ein Buch</span>
+                            <span class="arabic-pronoun">كتاب</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">eine Katze</span>
+                            <span class="arabic-pronoun">قطة</span>
+                        </div>
+                        <div class="pronoun-row">
+                            <span class="german-pronoun">ein Haus</span>
+                            <span class="arabic-pronoun">منزل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="examples-section">
+                <h2>Examples (أمثلة)</h2>
+                <div class="example-item">
+                    <div class="example-german">Ich bin Student.</div>
+                    <div class="example-arabic">أنا طالب.</div>
+                    <div class="example-english">I am a student.</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-german">Du kommst aus Deutschland.</div>
+                    <div class="example-arabic">أنت تأتي من ألمانيا.</div>
+                    <div class="example-english">You come from Germany.</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-german">Er liest ein Buch.</div>
+                    <div class="example-arabic">هو يقرأ كتاباً.</div>
+                    <div class="example-english">He reads a book.</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-german">Sie ist Lehrerin.</div>
+                    <div class="example-arabic">هي معلمة.</div>
+                    <div class="example-english">She is a teacher.</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-german">Wir lernen Deutsch.</div>
+                    <div class="example-arabic">نحن نتعلم الألمانية.</div>
+                    <div class="example-english">We learn German.</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-german">Ihr seid Freunde.</div>
+                    <div class="example-arabic">أنتم أصدقاء.</div>
+                    <div class="example-english">You are friends.</div>
+                </div>
+                <div class="example-item">
+                    <div class="example-german">Sie sprechen Arabisch.</div>
+                    <div class="example-arabic">هم يتكلمون العربية.</div>
+                    <div class="example-english">They speak Arabic.</div>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h2>Practice (تدريب)</h2>
+                
+                <div class="practice-question">
+                    <h4>Question 1: What does "ich" mean?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'أنا')">أنا</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'أنت')">أنت</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'هو')">هو</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'نحن')">نحن</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 2: What does "sie" mean in nominative case?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'هي')">هي</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'هم')">هم</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'أنتم')">أنتم</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'نحن')">نحن</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 4: What is the correct article for "Mann" (man)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'der')">der</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'die')">die</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'das')">das</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'ein')">ein</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 5: What is the indefinite article for "Frau" (woman)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'eine')">eine</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'ein')">ein</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'der')">der</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'die')">die</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 6: What is the correct article for "Kind" (child)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'das')">das</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'der')">der</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'die')">die</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'ein')">ein</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Back to Home</a>
+                <a href="#" class="nav-button">Next Lesson →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function checkAnswer(element, correctAnswer) {
+            const options = element.parentElement.querySelectorAll('.practice-option');
+            
+            // Disable all options
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+            
+            // Check if the clicked option is correct
+            if (element.textContent === correctAnswer) {
+                element.classList.add('correct');
+                showNotification('Correct! Well done!', 'success');
+            } else {
+                element.classList.add('incorrect');
+                // Highlight the correct answer
+                options.forEach(option => {
+                    if (option.textContent === correctAnswer) {
+                        option.classList.add('correct');
+                    }
+                });
+                showNotification('Incorrect. Try again!', 'error');
+            }
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                    option.style.pointerEvents = 'auto';
+                });
+            }, 3000);
+        }
+
+        function showNotification(message, type = 'info') {
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                color: white;
+                font-weight: 500;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                max-width: 300px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            `;
+            
+            switch(type) {
+                case 'success':
+                    notification.style.backgroundColor = '#28a745';
+                    break;
+                case 'error':
+                    notification.style.backgroundColor = '#dc3545';
+                    break;
+                default:
+                    notification.style.backgroundColor = '#17a2b8';
+            }
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

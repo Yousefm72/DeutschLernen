@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2: Verbs (sein, haben) - Deutsch Lernen with Yousef Masri</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lesson-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .lesson-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .lesson-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .verb-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .verb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .verb-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .verb-card:nth-child(2) {
+            border-left-color: #764ba2;
+        }
+        
+        .verb-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .verb-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .verb-meaning {
+            text-align: center;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .conjugation-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        
+        .conjugation-table th {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .conjugation-table td {
+            padding: 0.8rem;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .conjugation-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .german-verb {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+        
+        .arabic-verb {
+            color: #666;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .pronoun-cell {
+            font-weight: 500;
+            color: #667eea;
+        }
+        
+        .examples-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .example-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .example-card:nth-child(even) {
+            border-left-color: #764ba2;
+        }
+        
+        .example-german {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-arabic {
+            color: #666;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-english {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .usage-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .usage-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .usage-card h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .usage-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .usage-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+            color: #666;
+        }
+        
+        .usage-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .practice-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .practice-question {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-question h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .practice-option {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .practice-option:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .practice-option.correct {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+        
+        .practice-option.incorrect {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button {
+            background: #6c757d;
+        }
+        
+        .back-button:hover {
+            background: #5a6268;
+        }
+        
+        @media (max-width: 768px) {
+            .lesson-container {
+                padding: 1rem;
+            }
+            
+            .lesson-header h1 {
+                font-size: 2rem;
+            }
+            
+            .verb-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .usage-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .practice-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .conjugation-table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1>Lesson 2: Verbs (sein, haben)</h1>
+                <p>Learn German essential verbs "sein" and "haben" with Arabic translations</p>
+            </div>
+
+            <div class="verb-section">
+                <h2>Essential German Verbs (الأفعال الأساسية)</h2>
+                <p>These two verbs are the most important in German language. "Sein" means "to be" and "haben" means "to have".</p>
+                
+                <div class="verb-grid">
+                    <div class="verb-card">
+                        <div class="verb-title">SEIN</div>
+                        <div class="verb-meaning">يكون / يكون موجود</div>
+                        
+                        <table class="conjugation-table">
+                            <thead>
+                                <tr>
+                                    <th>Pronoun</th>
+                                    <th>German</th>
+                                    <th>Arabic</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pronoun-cell">ich</td>
+                                    <td class="german-verb">bin</td>
+                                    <td class="arabic-verb">أكون</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">du</td>
+                                    <td class="german-verb">bist</td>
+                                    <td class="arabic-verb">تكون</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">er/sie/es</td>
+                                    <td class="german-verb">ist</td>
+                                    <td class="arabic-verb">يكون/تكون</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">wir</td>
+                                    <td class="german-verb">sind</td>
+                                    <td class="arabic-verb">نكون</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">ihr</td>
+                                    <td class="german-verb">seid</td>
+                                    <td class="arabic-verb">تكونون</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">sie</td>
+                                    <td class="german-verb">sind</td>
+                                    <td class="arabic-verb">يكونون</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="verb-card">
+                        <div class="verb-title">HABEN</div>
+                        <div class="verb-meaning">يملك / لديه</div>
+                        
+                        <table class="conjugation-table">
+                            <thead>
+                                <tr>
+                                    <th>Pronoun</th>
+                                    <th>German</th>
+                                    <th>Arabic</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="pronoun-cell">ich</td>
+                                    <td class="german-verb">habe</td>
+                                    <td class="arabic-verb">أملك</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">du</td>
+                                    <td class="german-verb">hast</td>
+                                    <td class="arabic-verb">تملك</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">er/sie/es</td>
+                                    <td class="german-verb">hat</td>
+                                    <td class="arabic-verb">يملك/تملك</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">wir</td>
+                                    <td class="german-verb">haben</td>
+                                    <td class="arabic-verb">نملك</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">ihr</td>
+                                    <td class="german-verb">habt</td>
+                                    <td class="arabic-verb">تملكون</td>
+                                </tr>
+                                <tr>
+                                    <td class="pronoun-cell">sie</td>
+                                    <td class="german-verb">haben</td>
+                                    <td class="arabic-verb">يملكون</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="examples-section">
+                <h2>Examples (أمثلة)</h2>
+                <div class="example-grid">
+                    <div class="example-card">
+                        <div class="example-german">Ich bin Student.</div>
+                        <div class="example-arabic">أنا طالب.</div>
+                        <div class="example-english">I am a student.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Du bist Lehrer.</div>
+                        <div class="example-arabic">أنت معلم.</div>
+                        <div class="example-english">You are a teacher.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Er ist Arzt.</div>
+                        <div class="example-arabic">هو طبيب.</div>
+                        <div class="example-english">He is a doctor.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Sie ist müde.</div>
+                        <div class="example-arabic">هي متعبة.</div>
+                        <div class="example-english">She is tired.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Wir sind Freunde.</div>
+                        <div class="example-arabic">نحن أصدقاء.</div>
+                        <div class="example-english">We are friends.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Ihr seid glücklich.</div>
+                        <div class="example-arabic">أنتم سعداء.</div>
+                        <div class="example-english">You are happy.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Sie sind hier.</div>
+                        <div class="example-arabic">هم هنا.</div>
+                        <div class="example-english">They are here.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Ich habe ein Auto.</div>
+                        <div class="example-arabic">أنا لدي سيارة.</div>
+                        <div class="example-english">I have a car.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Du hast Zeit.</div>
+                        <div class="example-arabic">أنت لديك وقت.</div>
+                        <div class="example-english">You have time.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Er hat Hunger.</div>
+                        <div class="example-arabic">هو جائع.</div>
+                        <div class="example-english">He is hungry.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Sie hat ein Buch.</div>
+                        <div class="example-arabic">هي لديها كتاب.</div>
+                        <div class="example-english">She has a book.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">Wir haben Geld.</div>
+                        <div class="example-arabic">نحن لدينا مال.</div>
+                        <div class="example-english">We have money.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="usage-section">
+                <h2>Usage Rules (قواعد الاستخدام)</h2>
+                <div class="usage-grid">
+                    <div class="usage-card">
+                        <h4>SEIN Usage (استخدام يكون)</h4>
+                        <ul class="usage-list">
+                            <li>Identity: Ich bin Student</li>
+                            <li>Location: Wir sind in Berlin</li>
+                            <li>State: Du bist müde</li>
+                            <li>Time: Es ist 3 Uhr</li>
+                            <li>Weather: Es ist kalt</li>
+                        </ul>
+                    </div>
+                    <div class="usage-card">
+                        <h4>HABEN Usage (استخدام يملك)</h4>
+                        <ul class="usage-list">
+                            <li>Possession: Ich habe ein Auto</li>
+                            <li>Age: Du hast 25 Jahre</li>
+                            <li>Feelings: Er hat Angst</li>
+                            <li>Time: Wir haben Zeit</li>
+                            <li>Physical states: Sie hat Hunger</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h2>Practice (تدريب)</h2>
+                
+                <div class="practice-question">
+                    <h4>Question 1: What is the correct form of "sein" for "ich"?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'bin')">bin</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'bist')">bist</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'ist')">ist</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'sind')">sind</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 2: What is the correct form of "haben" for "du"?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'habe')">habe</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'hast')">hast</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'hat')">hat</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'habt')">habt</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 3: Complete: "Er _____ ein Buch"</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'hat')">hat</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'ist')">ist</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'habe')">habe</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'bin')">bin</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 4: Complete: "Wir _____ Studenten"</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'sind')">sind</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'haben')">haben</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'seid')">seid</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'ist')">ist</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Back to Home</a>
+                <a href="Lesson1.html" class="nav-button">← Previous Lesson</a>
+                <a href="#" class="nav-button">Next Lesson →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function checkAnswer(element, correctAnswer) {
+            const options = element.parentElement.querySelectorAll('.practice-option');
+            
+            // Disable all options
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+            
+            // Check if the clicked option is correct
+            if (element.textContent === correctAnswer) {
+                element.classList.add('correct');
+                showNotification('Correct! Well done!', 'success');
+            } else {
+                element.classList.add('incorrect');
+                // Highlight the correct answer
+                options.forEach(option => {
+                    if (option.textContent === correctAnswer) {
+                        option.classList.add('correct');
+                    }
+                });
+                showNotification('Incorrect. Try again!', 'error');
+            }
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                    option.style.pointerEvents = 'auto';
+                });
+            }, 3000);
+        }
+
+        function showNotification(message, type = 'info') {
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                color: white;
+                font-weight: 500;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                max-width: 300px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            `;
+            
+            switch(type) {
+                case 'success':
+                    notification.style.backgroundColor = '#28a745';
+                    break;
+                case 'error':
+                    notification.style.backgroundColor = '#dc3545';
+                    break;
+                default:
+                    notification.style.backgroundColor = '#17a2b8';
+            }
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
