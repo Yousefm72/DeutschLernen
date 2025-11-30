@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening Exercises - Deutsch Lernen</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .listening-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .listening-header {
+            text-align: center;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .listening-header h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.4rem;
+        }
+
+        .listening-header p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .listening-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .listening-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #667eea;
+        }
+
+        .listening-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .listening-card h3 {
+            margin: 0 0 1rem;
+            color: #2c3e50;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .listening-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .listening-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .listening-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.5rem;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            background: #6c757d;
+            box-shadow: 0 10px 25px rgba(108, 117, 125, 0.35);
+        }
+
+        .back-button:hover {
+            background: #5a6268;
+        }
+
+        @media (max-width: 768px) {
+            .listening-container {
+                padding: 1.2rem;
+            }
+
+            .listening-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .listening-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .listening-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="listening-container">
+            <div class="listening-header">
+                <h1><span role="img" aria-label="headphones icon">🎧</span> Listening Exercises</h1>
+                <p>Practice your German listening skills with audio exercises and Arabic translations</p>
+            </div>
+
+            <div class="listening-grid">
+                <div class="listening-card">
+                    <h3><span role="img" aria-label="conversation icon">🗣️</span> Airport Conversation</h3>
+                    <p>Listen to a comprehensive airport dialogue with multiple questions and answers. Practice real-world German conversations at the airport.</p>
+                    <a href="conversation.html" class="listening-button">Start Listening →</a>
+                </div>
+
+                <div class="listening-card">
+                    <h3><span role="img" aria-label="coffee icon">☕</span> At the Café</h3>
+                    <p>Listen to a German text about spending time at a café with friends. Practice vocabulary related to social activities and daily life.</p>
+                    <a href="Listen.html" class="listening-button">Start Listening →</a>
+                </div>
+
+                <div class="listening-card">
+                    <h3><span role="img" aria-label="briefcase icon">💼</span> First Week at New Job</h3>
+                    <p>Listen to a German text about starting a new job. Learn vocabulary related to work, colleagues, and the workplace.</p>
+                    <a href="earstWoche.html" class="listening-button">Start Listening →</a>
+                </div>
+
+                <div class="listening-card">
+                    <h3><span role="img" aria-label="sports icon">⚽</span> Doing Sports</h3>
+                    <p>Listen to a German text about sports activities. Practice vocabulary related to exercise, fitness, and daily routines.</p>
+                    <a href="Sport.html" class="listening-button">Start Listening →</a>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
