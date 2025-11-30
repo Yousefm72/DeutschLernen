@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listen: Mein Haus - Deutsch Lernen</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .listen-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .listen-header {
+            text-align: center;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .listen-header h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.4rem;
+        }
+
+        .listen-header p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .text-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .text-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .german-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+        }
+
+        .arabic-text {
+            font-size: 1.2rem;
+            line-height: 2;
+            color: #666;
+            direction: rtl;
+            text-align: right;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            margin-top: 1.5rem;
+        }
+
+        .play-all-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1.2rem 2.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin: 2rem auto;
+            justify-content: center;
+        }
+
+        .play-all-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.45);
+        }
+
+        .play-all-button.playing {
+            background: #28a745;
+        }
+
+        .play-all-button svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.5rem;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            background: #6c757d;
+            box-shadow: 0 10px 25px rgba(108, 117, 125, 0.35);
+        }
+
+        .back-button:hover {
+            background: #5a6268;
+        }
+
+        @media (max-width: 768px) {
+            .listen-container {
+                padding: 1.2rem;
+            }
+
+            .listen-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .german-text {
+                font-size: 1.1rem;
+            }
+
+            .arabic-text {
+                font-size: 1rem;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .play-all-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="listen-container">
+            <div class="listen-header">
+                <h1>Mein Haus</h1>
+                <p>Listen to a German text about my house</p>
+            </div>
+
+            <div class="content-section">
+                <div class="image-container">
+                    <img src="Image/mainHouse.png" alt="My house">
+                </div>
+
+                <div class="text-section">
+                    <h2>German Text (النص الألماني)</h2>
+                    <div class="german-text" id="germanText">
+                        Mein Haus<br><br>
+                        Ich wohne in einem kleinen Haus. Es hat drei Zimmer: ein Wohnzimmer, ein Schlafzimmer und eine Küche. Im Wohnzimmer gibt es ein Sofa, einen Tisch und einen Fernseher. Mein Schlafzimmer ist gemütlich. Dort schlafe ich und lese Bücher. Die Küche ist klein, aber praktisch. Ich koche dort jeden Tag.<br><br>
+                        Hinter dem Haus ist ein kleiner Garten. Ich mag mein Haus sehr.
+                    </div>
+
+                    <button class="play-all-button" onclick="playAllText()" id="playAllButton" title="Play all text">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                        Listen to All Text (استمع إلى النص كاملاً)
+                    </button>
+                </div>
+
+                <div class="text-section">
+                    <h2>Arabic Translation (الترجمة العربية)</h2>
+                    <div class="arabic-text">
+                        منزلي<br><br>
+                        أعيش في منزل صغير. يحتوي على ثلاث غرف: غرفة معيشة وغرفة نوم ومطبخ. في غرفة المعيشة يوجد أريكة وطاولة وتلفاز. غرفة نومي مريحة. هناك أنام وأقرأ الكتب. المطبخ صغير لكنه عملي. أطبخ هناك كل يوم.<br><br>
+                        خلف المنزل توجد حديقة صغيرة. أحب منزلي كثيراً.
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Back to Home</a>
+                <a href="Listening.html" class="nav-button">More Listening →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Text-to-speech function to play all text at once
+        function playAllText() {
+            const fullText = "Mein Haus. Ich wohne in einem kleinen Haus. Es hat drei Zimmer: ein Wohnzimmer, ein Schlafzimmer und eine Küche. Im Wohnzimmer gibt es ein Sofa, einen Tisch und einen Fernseher. Mein Schlafzimmer ist gemütlich. Dort schlafe ich und lese Bücher. Die Küche ist klein, aber praktisch. Ich koche dort jeden Tag. Hinter dem Haus ist ein kleiner Garten. Ich mag mein Haus sehr.";
+            
+            // Stop any currently playing speech
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                const button = document.getElementById('playAllButton');
+                button.classList.remove('playing');
+                button.innerHTML = `
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                    Listen to All Text (استمع إلى النص كاملاً)
+                `;
+                return;
+            }
+            
+            const utterance = new SpeechSynthesisUtterance(fullText);
+            utterance.lang = 'de-DE';
+            utterance.rate = 0.85;
+            utterance.pitch = 1;
+            
+            const button = document.getElementById('playAllButton');
+            button.classList.add('playing');
+            button.innerHTML = `
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                </svg>
+                Stop (إيقاف)
+            `;
+            
+            utterance.onend = function() {
+                button.classList.remove('playing');
+                button.innerHTML = `
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                    Listen to All Text (استمع إلى النص كاملاً)
+                `;
+            };
+            
+            utterance.onerror = function() {
+                button.classList.remove('playing');
+                button.innerHTML = `
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                    </svg>
+                    Listen to All Text (استمع إلى النص كاملاً)
+                `;
+            };
+            
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
+
