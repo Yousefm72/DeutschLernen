@@ -1,0 +1,5 @@
+create Sport.html  display image ich_soprt.png and add listen to All text at once The attachmenttext "
+
+Ich mache Sport
+Jeden Dienstag und Donnerstag gehe ich zum Sport. Ich ziehe meine Sportsachen an und nehme meine Trinkflasche mit. Wir machen zuerst Aufwärmübungen und danach spielen wir Fußball oder rennen. Ich bewege mich gern und fühle mich danach fit und stark. Sport macht Spaß und ist gesund.
+Aiman Mansoor."
