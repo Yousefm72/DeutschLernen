@@ -248,6 +248,138 @@
             border-bottom: none;
         }
         
+        .cases-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .cases-intro {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #667eea;
+        }
+        
+        .cases-intro h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .cases-intro p {
+            color: #666;
+            line-height: 1.8;
+            direction: rtl;
+            text-align: right;
+            font-size: 1.1rem;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .case-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .case-card:nth-child(2) {
+            border-left-color: #764ba2;
+        }
+        
+        .case-card:nth-child(3) {
+            border-left-color: #28a745;
+        }
+        
+        .case-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        .case-arabic-title {
+            color: #666;
+            direction: rtl;
+            text-align: right;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .case-description {
+            color: #666;
+            direction: rtl;
+            text-align: right;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .case-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .case-table th {
+            background: #667eea;
+            color: white;
+            padding: 0.6rem;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .case-table td {
+            padding: 0.6rem;
+            text-align: center;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .case-table tr:nth-child(even) {
+            background: #ffffff;
+        }
+        
+        .case-examples {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e9ecef;
+        }
+        
+        .case-examples h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .case-example-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            border-left: 3px solid #667eea;
+        }
+        
+        .case-example-german {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+        
+        .case-example-arabic {
+            color: #666;
+            direction: rtl;
+            text-align: right;
+        }
+        
         .practice-section {
             background: white;
             padding: 2rem;
@@ -751,6 +883,177 @@
                             <li>Physical states: Sie hat Hunger</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+
+            <div class="cases-section">
+                <h2>Grammatical Cases in German (الحالات الإعرابية في الألمانية)</h2>
+                
+                <div class="cases-intro">
+                    <h3>Introduction to Cases (مقدمة عن الحالات الإعرابية)</h3>
+                    <p>
+                        في اللغة الألمانية، تتغير نهايات الأسماء والضمائر والصفات حسب وظيفتها في الجملة. هناك أربع حالات إعرابية رئيسية، لكننا سنركز هنا على الثلاث الأولى: الرفع (Nominativ)، والنصب (Akkusativ)، والجر (Dativ). هذه الحالات تحدد دور الكلمة في الجملة - هل هي الفاعل، المفعول به، أو المفعول لأجله.
+                    </p>
+                </div>
+
+                <div class="case-grid">
+                    <div class="case-card">
+                        <div class="case-title">Nominativ (الرفع)</div>
+                        <div class="case-arabic-title">حالة الرفع - الفاعل</div>
+                        <div class="case-description">
+                            حالة الرفع تستخدم للفاعل في الجملة - الشخص أو الشيء الذي يقوم بالفعل. في الجملة البسيطة، الفاعل دائماً في حالة الرفع.
+                        </div>
+                        
+                        <table class="case-table">
+                            <thead>
+                                <tr>
+                                    <th>Article</th>
+                                    <th>Masculine</th>
+                                    <th>Feminine</th>
+                                    <th>Neuter</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>der/die/das</strong></td>
+                                    <td>der</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>ein/eine</strong></td>
+                                    <td>ein</td>
+                                    <td>eine</td>
+                                    <td>ein</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="case-examples">
+                            <h4>Examples (أمثلة):</h4>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Der Mann ist groß.</div>
+                                <div class="case-example-arabic">الرجل طويل. (der Mann = الفاعل في حالة الرفع)</div>
+                            </div>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Die Frau liest ein Buch.</div>
+                                <div class="case-example-arabic">المرأة تقرأ كتاباً. (die Frau = الفاعل في حالة الرفع)</div>
+                            </div>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Das Kind spielt.</div>
+                                <div class="case-example-arabic">الطفل يلعب. (das Kind = الفاعل في حالة الرفع)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-title">Akkusativ (النصب)</div>
+                        <div class="case-arabic-title">حالة النصب - المفعول به</div>
+                        <div class="case-description">
+                            حالة النصب تستخدم للمفعول به المباشر - الشيء الذي يتأثر بالفعل مباشرة. معظم الأفعال المتعدية تأخذ مفعولاً به في حالة النصب.
+                        </div>
+                        
+                        <table class="case-table">
+                            <thead>
+                                <tr>
+                                    <th>Article</th>
+                                    <th>Masculine</th>
+                                    <th>Feminine</th>
+                                    <th>Neuter</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>den/die/das</strong></td>
+                                    <td>den</td>
+                                    <td>die</td>
+                                    <td>das</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>einen/eine</strong></td>
+                                    <td>einen</td>
+                                    <td>eine</td>
+                                    <td>ein</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="case-examples">
+                            <h4>Examples (أمثلة):</h4>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Ich sehe den Mann.</div>
+                                <div class="case-example-arabic">أنا أرى الرجل. (den Mann = المفعول به في حالة النصب)</div>
+                            </div>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Er kauft eine Zeitung.</div>
+                                <div class="case-example-arabic">هو يشتري جريدة. (eine Zeitung = المفعول به في حالة النصب)</div>
+                            </div>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Wir haben das Buch.</div>
+                                <div class="case-example-arabic">نحن لدينا الكتاب. (das Buch = المفعول به في حالة النصب)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="case-card">
+                        <div class="case-title">Dativ (الجر)</div>
+                        <div class="case-arabic-title">حالة الجر - المفعول لأجله</div>
+                        <div class="case-description">
+                            حالة الجر تستخدم للإشارة إلى الشخص أو الشيء الذي يتم الفعل من أجله أو له. تستخدم مع حروف الجر مثل "mit" (مع)، "zu" (إلى)، "von" (من)، ومع بعض الأفعال مثل "helfen" (يساعد)، "geben" (يعطي).
+                        </div>
+                        
+                        <table class="case-table">
+                            <thead>
+                                <tr>
+                                    <th>Article</th>
+                                    <th>Masculine</th>
+                                    <th>Feminine</th>
+                                    <th>Neuter</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>dem/der/dem</strong></td>
+                                    <td>dem</td>
+                                    <td>der</td>
+                                    <td>dem</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>einem/einer</strong></td>
+                                    <td>einem</td>
+                                    <td>einer</td>
+                                    <td>einem</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="case-examples">
+                            <h4>Examples (أمثلة):</h4>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Ich gebe dem Kind ein Buch.</div>
+                                <div class="case-example-arabic">أنا أعطي الطفل كتاباً. (dem Kind = المفعول لأجله في حالة الجر)</div>
+                            </div>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Er hilft der Frau.</div>
+                                <div class="case-example-arabic">هو يساعد المرأة. (der Frau = المفعول لأجله في حالة الجر)</div>
+                            </div>
+                            <div class="case-example-item">
+                                <div class="case-example-german">Wir gehen mit dem Freund.</div>
+                                <div class="case-example-arabic">نحن نذهب مع الصديق. (dem Freund = بعد حرف الجر "mit" في حالة الجر)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cases-intro" style="margin-top: 2rem; border-left-color: #28a745;">
+                    <h3>Important Notes (ملاحظات مهمة)</h3>
+                    <p style="direction: rtl; text-align: right;">
+                        <strong>ملاحظة 1:</strong> الأسماء المؤنثة (die) والجمع لا تتغير في حالة النصب - تبقى "die".<br>
+                        <strong>ملاحظة 2:</strong> الأسماء المحايدة (das) لا تتغير في حالة النصب - تبقى "das".<br>
+                        <strong>ملاحظة 3:</strong> الأسماء المذكرة (der) تتغير إلى "den" في حالة النصب.<br>
+                        <strong>ملاحظة 4:</strong> في حالة الجر، الأسماء المذكرة والمحايدة تتغير إلى "dem"، والمؤنثة إلى "der".<br>
+                        <strong>ملاحظة 5:</strong> بعض الأفعال مثل "sein" و "werden" لا تأخذ مفعولاً به، بل تأخذ خبراً في حالة الرفع.
+                    </p>
                 </div>
             </div>
 

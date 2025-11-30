@@ -120,6 +120,45 @@
         .example-german {
             font-weight: 600;
             color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .play-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 0;
+            flex-shrink: 0;
+        }
+        
+        .play-button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        
+        .play-button:active {
+            transform: scale(0.95);
+        }
+        
+        .play-button.playing {
+            background: #28a745;
+        }
+        
+        .play-button svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
         
         .example-arabic {
@@ -464,41 +503,90 @@
             <div class="examples-section">
                 <h2>Examples (أمثلة)</h2>
                 <div class="example-item">
-                    <div class="example-german">Ich bin Student.</div>
+                    <div class="example-german">
+                        <span>Ich bin Student.</span>
+                        <button class="play-button" onclick="playGerman('Ich bin Student.', this)" title="Play pronunciation">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="example-arabic">أنا طالب.</div>
                     <div class="example-english">I am a student.</div>
                 </div>
                 <div class="example-item">
-                    <div class="example-german">Du kommst aus Deutschland.</div>
+                    <div class="example-german">
+                        <span>Du kommst aus Deutschland.</span>
+                        <button class="play-button" onclick="playGerman('Du kommst aus Deutschland.', this)" title="Play pronunciation">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="example-arabic">أنت تأتي من ألمانيا.</div>
                     <div class="example-english">You come from Germany.</div>
                 </div>
                 <div class="example-item">
-                    <div class="example-german">Er liest ein Buch.</div>
+                    <div class="example-german">
+                        <span>Er liest ein Buch.</span>
+                        <button class="play-button" onclick="playGerman('Er liest ein Buch.', this)" title="Play pronunciation">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="example-arabic">هو يقرأ كتاباً.</div>
                     <div class="example-english">He reads a book.</div>
                 </div>
                 <div class="example-item">
-                    <div class="example-german">Sie ist Lehrerin.</div>
+                    <div class="example-german">
+                        <span>Sie ist Lehrerin.</span>
+                        <button class="play-button" onclick="playGerman('Sie ist Lehrerin.', this)" title="Play pronunciation">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="example-arabic">هي معلمة.</div>
                     <div class="example-english">She is a teacher.</div>
                 </div>
                 <div class="example-item">
-                    <div class="example-german">Wir lernen Deutsch.</div>
+                    <div class="example-german">
+                        <span>Wir lernen Deutsch.</span>
+                        <button class="play-button" onclick="playGerman('Wir lernen Deutsch.', this)" title="Play pronunciation">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="example-arabic">نحن نتعلم الألمانية.</div>
                     <div class="example-english">We learn German.</div>
                 </div>
                 <div class="example-item">
-                    <div class="example-german">Ihr seid Freunde.</div>
+                    <div class="example-german">
+                        <span>Ihr seid Freunde.</span>
+                        <button class="play-button" onclick="playGerman('Ihr seid Freunde.', this)" title="Play pronunciation">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    </div>
                     <div class="example-arabic">أنتم أصدقاء.</div>
                     <div class="example-english">You are friends.</div>
                 </div>
-            <div class="example-item">
-                <div class="example-german">Sie sprechen Arabisch.</div>
-                <div class="example-arabic">هم يتكلمون العربية.</div>
-                <div class="example-english">They speak Arabic.</div>
+                <div class="example-item">
+                    <div class="example-german">
+                        <span>Sie sprechen Arabisch.</span>
+                        <button class="play-button" onclick="playGerman('Sie sprechen Arabisch.', this)" title="Play pronunciation">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="example-arabic">هم يتكلمون العربية.</div>
+                    <div class="example-english">They speak Arabic.</div>
+                </div>
             </div>
-        </div>
 
             <div class="navigation-buttons">
                 <a href="index.html" class="nav-button back-button">← Back to Home</a>
@@ -512,5 +600,28 @@
             <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Text-to-speech function for German listening
+        function playGerman(text, buttonElement) {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            
+            const button = buttonElement || (event ? event.target.closest('.play-button') : null);
+            if (button) {
+                button.classList.add('playing');
+                utterance.onend = () => button.classList.remove('playing');
+                utterance.onerror = () => button.classList.remove('playing');
+            }
+            
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
 </body>
 </html>
