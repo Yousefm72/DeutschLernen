@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson: Prepositions of Place & Direction - Deutsch Lernen</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .lesson-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(118, 75, 162, 0.25);
+        }
+
+        .lesson-header h1 {
+            font-size: 2.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .lesson-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 18px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: #4c4f6a;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            margin-bottom: 1.5rem;
+            color: #6c6f85;
+        }
+
+        .preposition-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .preposition-table th {
+            background: #f0f2ff;
+            color: #4c4f6a;
+            padding: 0.9rem;
+            text-align: left;
+            font-size: 0.95rem;
+            border-bottom: 2px solid #e0e3ff;
+        }
+
+        .preposition-table td {
+            padding: 0.9rem;
+            border-bottom: 1px solid #edf0ff;
+            vertical-align: middle;
+        }
+
+        .preposition-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #2c3e50;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .example-text {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .example {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9ff;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+
+        .example-ar {
+            color: #6c6f85;
+            direction: rtl;
+            text-align: right;
+            font-size: 0.95rem;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .play-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .play-button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .play-button.playing {
+            background: #28a745;
+        }
+
+        .play-button svg {
+            width: 15px;
+            height: 15px;
+            fill: currentColor;
+        }
+
+        .tip-box {
+            background: #fff9f0;
+            border-left: 4px solid #ffa940;
+            padding: 1.2rem;
+            border-radius: 12px;
+            color: #ad6b00;
+            margin-top: 1.5rem;
+        }
+
+        .practice-card {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .practice-card h3 {
+            margin-top: 0;
+        }
+
+        .practice-list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.5rem;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            background: #6c757d;
+            box-shadow: 0 10px 25px rgba(108, 117, 125, 0.35);
+        }
+
+        @media (max-width: 768px) {
+            .lesson-container {
+                padding: 1.2rem;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1>German Prepositions: Places & Directions</h1>
+                <p>Learn how to describe where things are and where they are going with essential German prepositions, Arabic translations, and pronunciation.</p>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title">1. Prepositions of Location (حروف الجر المكانية)</h2>
+                <p class="section-subtitle">Used with dative to show position or location. The object stays in one place.</p>
+
+                <table class="preposition-table">
+                    <thead>
+                        <tr>
+                            <th>Preposition</th>
+                            <th>Meaning</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>in</span>
+                                <button class="play-button" onclick="playGerman('in', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>inside, in (داخل)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Der Tisch steht in dem Zimmer.</span>
+                                        <button class="play-button" onclick="playGerman('Der Tisch steht in dem Zimmer.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">الطاولة في الغرفة.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>auf</span>
+                                <button class="play-button" onclick="playGerman('auf', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>on, on top of (على سطح)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Das Buch liegt auf dem Tisch.</span>
+                                        <button class="play-button" onclick="playGerman('Das Buch liegt auf dem Tisch.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">الكتاب على الطاولة.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>an</span>
+                                <button class="play-button" onclick="playGerman('an', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>at, on (vertical surface) (على / بجانب)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Ein Bild hängt an der Wand.</span>
+                                        <button class="play-button" onclick="playGerman('Ein Bild hängt an der Wand.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">صورة معلّقة على الحائط.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>neben</span>
+                                <button class="play-button" onclick="playGerman('neben', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>next to (بجانب)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Die Bank steht neben dem Baum.</span>
+                                        <button class="play-button" onclick="playGerman('Die Bank steht neben dem Baum.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">المقعد بجانب الشجرة.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>über</span>
+                                <button class="play-button" onclick="playGerman('über', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>above/over (فوق)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Die Lampe hängt über dem Tisch.</span>
+                                        <button class="play-button" onclick="playGerman('Die Lampe hängt über dem Tisch.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">المصباح فوق الطاولة.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>unter</span>
+                                <button class="play-button" onclick="playGerman('unter', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>under, below (تحت)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Die Katze schläft unter dem Bett.</span>
+                                        <button class="play-button" onclick="playGerman('Die Katze schläft unter dem Bett.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">القطة تنام تحت السرير.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>vor</span>
+                                <button class="play-button" onclick="playGerman('vor', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>in front of, before (أمام)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Ein Auto steht vor dem Haus.</span>
+                                        <button class="play-button" onclick="playGerman('Ein Auto steht vor dem Haus.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">سيارة تقف أمام المنزل.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>hinter</span>
+                                <button class="play-button" onclick="playGerman('hinter', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>behind (خلف)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Der Garten liegt hinter dem Haus.</span>
+                                        <button class="play-button" onclick="playGerman('Der Garten liegt hinter dem Haus.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">الحديقة خلف المنزل.</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="preposition-name">
+                                <span>zwischen</span>
+                                <button class="play-button" onclick="playGerman('zwischen', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </td>
+                            <td>between (بين)</td>
+                            <td>
+                                <div class="example">
+                                    <div class="example-text">
+                                        <span>Die Schule steht zwischen dem Park und dem Kino.</span>
+                                        <button class="play-button" onclick="playGerman('Die Schule steht بين dem Park und dem Kino.', this)" title="Play sentence">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="example-ar">المدرسة تقع بين الحديقة والسينما.</div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="tip-box">
+                    ⚡ <strong>Tip:</strong> These prepositions trigger dative when the location is stationary. If movement toward the place occurs, use accusative (see section 2).
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title">2. Prepositions of Direction (حروف الجر للحركة والاتجاه)</h2>
+                <p class="section-subtitle">Used to describe movement from one place to another. Usually with accusative.</p>
+
+                <div class="examples-grid">
+                    <div class="example">
+                        <div class="example-text">
+                            <span><strong>nach</strong> (to countries/cities) — Ich fliege nach Berlin.</span>
+                            <button class="play-button" onclick="playGerman('Ich fliege nach Berlin.', this)" title="Play sentence">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-ar">أنا أطير إلى برلين.</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-text">
+                            <span><strong>zu</strong> (to people/specific places) — Ich gehe zu meinem Freund.</span>
+                            <button class="play-button" onclick="playGerman('Ich gehe zu meinem Freund.', this)" title="Play sentence">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-ar">أنا أذهب إلى صديقي.</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-text">
+                            <span><strong>in</strong> (into enclosed spaces) — Wir gehen in die Schule.</span>
+                            <button class="play-button" onclick="playGerman('Wir gehen in die Schule.', this)" title="Play sentence">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-ar">نحن ندخل المدرسة.</div>
+                    </div>
+                    <div class="example">
+                        <div class="example-text">
+                            <span><strong>auf</strong> (onto surfaces/public places) — Er geht auf den Markt.</span>
+                            <button class="play-button" onclick="playGerman('Er geht auf den Markt.', this)" title="Play sentence">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-ar">هو يذهب إلى السوق.</div>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    🚶 <strong>Direction rule:</strong> When movement toward a place is clear, use the accusative case even for two-way prepositions (in, auf, an, über, unter, vor, hinter).
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2 class="section-title">3. Practice & Listening (تدريب مع الاستماع)</h2>
+                <p class="section-subtitle">Combine the prepositions with places. Listen, repeat, and translate.</p>
+
+                <div class="practice-card">
+                    <h3>Mini Listening Drills</h3>
+                    <ol class="practice-list">
+                        <li>
+                            <div class="example-text">
+                                <span>Ich sitze auf dem Balkon.</span>
+                                <button class="play-button" onclick="playGerman('Ich sitze auf dem Balkon.', this)" title="Play sentence">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="example-ar">أنا أجلس على الشرفة.</div>
+                        </li>
+                        <li>
+                            <div class="example-text">
+                                <span>Wir fahren nach Österreich.</span>
+                                <button class="play-button" onclick="playGerman('Wir fahren nach Österreich.', this)" title="Play sentence">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="example-ar">نحن نسافر إلى النمسا.</div>
+                        </li>
+                        <li>
+                            <div class="example-text">
+                                <span>Sie stellt die Lampe neben das Sofa.</span>
+                                <button class="play-button" onclick="playGerman('Sie stellt die Lampe neben das Sofa.', this)" title="Play sentence">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="example-ar">هي تضع المصباح بجانب الأريكة.</div>
+                        </li>
+                        <li>
+                            <div class="example-text">
+                                <span>Der Bus fährt zum Bahnhof.</span>
+                                <button class="play-button" onclick="playGerman('Der Bus fährt zum Bahnhof.', this)" title="Play sentence">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="example-ar">الحافلة تذهب إلى محطة القطار.</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="tip-box">
+                    🎧 استمع ثم حاول أن تعيد الجملة بالألمانية وبالعربية. عدّل الحالة الإعرابية بحسب المعنى (موقع ثابت = داتيڤ، حركة = أكوزاتيف).
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Back to Home</a>
+                <a href="Lesson3.htm" class="nav-button">Previous Lesson</a>
+                <a href="Lesson2.html" class="nav-button">Next Lesson →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function playGerman(text, buttonElement) {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            
+            const button = buttonElement || (event ? event.target.closest('.play-button') : null);
+            if (button) {
+                button.classList.add('playing');
+                utterance.onend = () => button.classList.remove('playing');
+                utterance.onerror = () => button.classList.remove('playing');
+            }
+            
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>

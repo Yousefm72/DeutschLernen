@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Conversation - Deutsch Lernen</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .conversation-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .conversation-header {
+            text-align: center;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+            color: white;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0, 131, 176, 0.3);
+        }
+
+        .conversation-header h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.4rem;
+        }
+
+        .conversation-section {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid #00a8e8;
+        }
+
+        .speaker {
+            font-weight: 700;
+            color: #0083b0;
+            margin-bottom: 0.5rem;
+        }
+
+        .line {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        .translation {
+            margin-top: 0.4rem;
+            color: #6b7280;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .play-button {
+            background: #00b4db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .play-button:hover {
+            background: #0083b0;
+            transform: scale(1.05);
+        }
+
+        .play-button.playing {
+            background: #28a745;
+        }
+
+        .play-button svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .qa-section {
+            margin-top: 2.5rem;
+            background: white;
+            border-radius: 18px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .qa-section h2 {
+            margin-top: 0;
+            color: #005f73;
+        }
+
+        .qa-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .qa-item {
+            background: #f8fbff;
+            border-radius: 14px;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e3ecff;
+        }
+
+        .qa-question,
+        .qa-answer {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            color: #22333b;
+        }
+
+        .qa-answer {
+            margin-top: 0.6rem;
+            font-weight: 500;
+            color: #1d3557;
+        }
+
+        .qa-translation {
+            margin-top: 0.3rem;
+            direction: rtl;
+            text-align: right;
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.5rem;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.35);
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .back-button {
+            background: #6c757d;
+            box-shadow: 0 10px 25px rgba(108, 117, 125, 0.35);
+        }
+
+        @media (max-width: 768px) {
+            .conversation-container {
+                padding: 1.2rem;
+            }
+
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="conversation-container">
+            <div class="conversation-header">
+                <h1>Am Flughafen – At the Airport</h1>
+                <p>Listen to a short dialogue between a passenger and airline staff, then read the Arabic translation.</p>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Passagier (Passenger)</div>
+                <div class="line">
+                    <span>Guten Morgen! Wo kann ich einchecken?</span>
+                    <button class="play-button" onclick="playGerman('Guten Morgen! Wo kann ich einchecken?', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">صباح الخير! أين يمكنني تسجيل الوصول؟</div>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Mitarbeiterin (Staff)</div>
+                <div class="line">
+                    <span>Guten Morgen! Der Check-in für Ihren Flug ist am Schalter 12.</span>
+                    <button class="play-button" onclick="playGerman('Guten Morgen! Der Check-in für Ihren Flug ist am Schalter zwölf.', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">صباح الخير! تسجيل الوصول لرحلتك عند الشباك رقم 12.</div>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Passagier</div>
+                <div class="line">
+                    <span>Danke. Und wo ist die Sicherheitskontrolle?</span>
+                    <button class="play-button" onclick="playGerman('Danke. Und wo ist die Sicherheitskontrolle?', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">شكراً. وأين تقع نقطة التفتيش الأمني؟</div>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Mitarbeiterin</div>
+                <div class="line">
+                    <span>Nach dem Check-in gehen Sie bitte geradeaus und dann links.</span>
+                    <button class="play-button" onclick="playGerman('Nach dem Check-in gehen Sie bitte geradeaus und dann links.', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">بعد تسجيل الوصول، يرجى السير مباشرة ثم الانعطاف يساراً.</div>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Passagier</div>
+                <div class="line">
+                    <span>Super, vielen Dank! Wo finde ich dann das Gate B21?</span>
+                    <button class="play-button" onclick="playGerman('Super, vielen Dank! Wo finde ich dann das Gate B einundzwanzig?', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77س"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">رائع، شكراً جزيلاً! أين أجد البوابة B21؟</div>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Mitarbeiterin</div>
+                <div class="line">
+                    <span>Folgen Sie den Schildern. Die Gates B sind eine Etage höher.</span>
+                    <button class="play-button" onclick="playGerman('Folgen Sie den Schildern. Die Gates B sind eine Etage höher.', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77س"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">اتبع العلامات. بوابات B تقع في الطابق الأعلى.</div>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Passagier</div>
+                <div class="line">
+                    <span>Alles klar. Einen schönen Tag!</span>
+                    <button class="play-button" onclick="playGerman('Alles klar. Einen schönen Tag!', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23ف"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">تمام، يوماً سعيداً!</div>
+            </div>
+
+            <div class="conversation-section">
+                <div class="speaker">Mitarbeiterin</div>
+                <div class="line">
+                    <span>Ihnen auch! Guten Flug.</span>
+                    <button class="play-button" onclick="playGerman('Ihnen auch! Guten Flug.', this)" title="Play German">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03ف"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="translation">وأنت أيضاً! رحلة سعيدة.</div>
+            </div>
+
+            <div class="qa-section">
+                <h2>Fragen & Antworten am Flughafen</h2>
+                <p>Häufige Situationen mit kurzem Frage-Antwort-Dialog. Höre dir jede Zeile an und lies die arabische Übersetzung.</p>
+
+                <div class="qa-grid">
+                    <!-- QA 01 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wo befindet sich der Check-in-Schalter für Lufthansa?
+                            <button class="play-button" onclick="playGerman('Wo befindet sich der Check-in-Schalter für Lufthansa?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">أين يقع شباك تسجيل الوصول لخطوط لوفتهانزا؟</div>
+                        <div class="qa-answer">
+                            Der Check-in-Schalter für Lufthansa ist in Halle B.
+                            <button class="play-button" onclick="playGerman('Der Check-in-Schalter für Lufthansa ist in Halle B.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03ف"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">شباك تسجيل لوفتهانزا في القاعة B.</div>
+                    </div>
+                    <!-- QA 13 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wann beginnt das Boarding für Flug AZ 412?
+                            <button class="play-button" onclick="playGerman('Wann beginnt das Boarding für Flug AZ 412?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">متى يبدأ الصعود للطائرة للرحلة AZ 412؟</div>
+                        <div class="qa-answer">
+                            Das Boarding beginnt dreißig Minuten vor Abflug am Gate C3.
+                            <button class="play-button" onclick="playGerman('Das Boarding beginnt dreißig Minuten vor Abflug am Gate C3.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                    <!-- QA 03 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wo bekomme ich einen Gepäckwagen?
+                            <button class="play-button" onclick="playGerman('Wo bekomme ich einen Gepäckwagen?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">أين يمكنني الحصول على عربة أمتعة؟</div>
+                        <div class="qa-answer">
+                            Gepäckwagen stehen direkt vor dem Haupteingang.
+                            <button class="play-button" onclick="playGerman('Gepäckwagen stehen direkt vor dem Haupteingang.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">توجد عربات الأمتعة أمام المدخل الرئيسي مباشرة.</div>
+                    </div>
+                    <!-- QA 04 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wo kann ich mein Übergepäck bezahlen?
+                            <button class="play-button" onclick="playGerman('Wo kann ich mein Übergepäck bezahlen?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">أين يمكنني دفع رسوم الوزن الزائد؟</div>
+                        <div class="qa-answer">
+                            Sie bezahlen Übergepäck am Serviceschalter neben Schalter fünf.
+                            <button class="play-button" onclick="playGerman('Sie bezahlen Übergepäck am Serviceschalter neben Schalter fünf.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">ادفع الوزن الزائد عند شباك الخدمة بجوار الشباك 5.</div>
+                    </div>
+                    <!-- QA 05 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Darf ich dieses Handgepäck mit an Bord nehmen?
+                            <button class="play-button" onclick="playGerman('Darf ich dieses Handgepäck mit an Bord nehmen?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">هل يمكنني أخذ هذه الحقيبة اليدوية إلى الطائرة؟</div>
+                        <div class="qa-answer">
+                            Ja, dieses Handgepäck erfüllt die erlaubten Maße.
+                            <button class="play-button" onclick="playGerman('Ja, dieses Handgepäck erfüllt die erlaubten Maße.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">نعم، هذه الحقيبة تطابق القياسات المسموح بها.</div>
+                    </div>
+                    <!-- QA 06 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wo gebe ich Sportgepäck ab?
+                            <button class="play-button" onclick="playGerman('Wo gebe ich Sportgepäck ab?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">أين أسلّم معدات الرياضة؟</div>
+                        <div class="qa-answer">
+                            Sportgepäck geben Sie am Sondergepäckschalter hinter Reihe C ab.
+                            <button class="play-button" onclick="playGerman('Sportgepäck geben Sie am Sondergepäckschalter hinter Reihe C ab.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71வ"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">سلّم معدات الرياضة عند شباك الأمتعة الخاصة خلف الصف C.</div>
+                    </div>
+                    <!-- QA 07 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wo ist die Sicherheitskontrolle für Gates A?
+                            <button class="play-button" onclick="playGerman('Wo ist die Sicherheitskontrolle für Gates A?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71வ"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">أين تقع نقطة التفتيش الأمني لبوابات A؟</div>
+                        <div class="qa-answer">
+                            Die Sicherheitskontrolle für Gates A ist im ersten Stock, Bereich West.
+                            <button class="play-button" onclick="playGerman('Die Sicherheitskontrolle für Gates A ist im ersten Stock, Bereich West.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03வ"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">نقطة التفتيش الأمني لبوابات A في الطابق الأول، القسم الغربي.</div>
+                    </div>
+                    <!-- QA 08 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Muss ich meine Flüssigkeiten separat zeigen?
+                            <button class="play-button" onclick="playGerman('Muss ich meine Flüssigkeiten separat zeigen?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">هل يجب أن أُظهر السوائل بشكل منفصل؟</div>
+                        <div class="qa-answer">
+                            Ja, bitte legen Sie Ihre Flüssigkeiten in einen transparenten Beutel.
+                            <button class="play-button" onclick="playGerman('Ja, bitte legen Sie Ihre Flüssigkeiten in einen transparenten Beutel.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">نعم، ضع السوائل في كيس شفاف من فضلك.</div>
+                    </div>
+                    <!-- QA 09 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wie lange dauert die Sicherheitskontrolle im Durchschnitt?
+                            <button class="play-button" onclick="playGerman('Wie lange dauert die Sicherheitskontrolle im Durchschnitt?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">كم يستغرق التفتيش الأمني في المتوسط؟</div>
+                        <div class="qa-answer">
+                            Im Moment dauert die Kontrolle ungefähr fünfzehn Minuten.
+                            <button class="play-button" onclick="playGerman('Im Moment dauert die Kontrolle ungefähr fünfzehn Minuten.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">التفتيش يستغرق حالياً نحو خمس عشرة دقيقة.</div>
+                    </div>
+                    <!-- QA 10 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Gibt es hier einen Schnellzugang zur Kontrolle?
+                            <button class="play-button" onclick="playGerman('Gibt es hier einen Schnellzugang zur Kontrolle?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">هل يوجد مسار سريع للتفتيش؟</div>
+                        <div class="qa-answer">
+                            Ja, mit einer Fast-Track-Karte können Sie den linken Eingang nutzen.
+                            <button class="play-button" onclick="playGerman('Ja, mit einer Fast-Track-Karte können Sie den linken Eingang nutzen.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">نعم، مع بطاقة المسار السريع يمكنك استخدام المدخل الأيسر.</div>
+                    </div>
+                    <!-- QA 11 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wo finde ich den Service für verlorene Gegenstände?
+                            <button class="play-button" onclick="playGerman('Wo finde ich den Service für verlorene Gegenstände?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">أين أجد خدمة المفقودات؟</div>
+                        <div class="qa-answer">
+                            Der Lost-and-Found-Schalter ist neben dem Informationspunkt im Erdgeschoss.
+                            <button class="play-button" onclick="playGerman('Der Lost-and-Found-Schalter ist neben dem Informationspunkt im Erdgeschoss.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">شباك المفقودات بجوار نقطة المعلومات في الطابق الأرضي.</div>
+                    </div>
+                    <!-- QA 12 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wie komme ich zum Gate B21?
+                            <button class="play-button" onclick="playGerman('Wie komme ich zum Gate B einundzwanzig?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03व"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">كيف أصل إلى البوابة B21؟</div>
+                        <div class="qa-answer">
+                            Folgen Sie den blauen Schildern und nehmen Sie die Rolltreppe nach oben.
+                            <button class="play-button" onclick="playGerman('Folgen Sie den blauen Schildern und nehmen Sie die Rolltreppe nach oben.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4ल5 5V4L7 9H3zm13.5..."/> (pattern repeated)
+                    <!-- QA 02 -->
+                    <div class="qa-item">
+                        <div class="qa-question">
+                            Wann öffnet der Check-in für den Flug nach Berlin?
+                            <button class="play-button" onclick="playGerman('Wann öffnet der Check-in für den Flug nach Berlin?', this)" title="Play question">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03ف"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">متى يفتح تسجيل الوصول للرحلة المتجهة إلى برلين؟</div>
+                        <div class="qa-answer">
+                            Der Check-in öffnet zwei Stunden vor Abflug.
+                            <button class="play-button" onclick="playGerman('Der Check-in öffnet zwei Stunden vor Abflug.', this)" title="Play answer">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4ل5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03ف"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="qa-translation">يفتح تسجيل الوصول قبل الإقلاع بساعتين.</div>
+                    </div>
+...
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Back to Home</a>
+                <a href="prepositions.html" class="nav-button">Practice Prepositions</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function playGerman(text, buttonElement) {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.rate = 0.95;
+            utterance.pitch = 1;
+            
+            const button = buttonElement || (event ? event.target.closest('.play-button') : null);
+            if (button) {
+                button.classList.add('playing');
+                utterance.onend = () => button.classList.remove('playing');
+                utterance.onerror = () => button.classList.remove('playing');
+            }
+            
+            window.speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
+

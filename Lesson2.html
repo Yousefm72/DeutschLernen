@@ -106,6 +106,45 @@
             font-weight: 600;
             color: #2c3e50;
             font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            justify-content: center;
+        }
+        
+        .play-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 0;
+        }
+        
+        .play-button:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+        
+        .play-button:active {
+            transform: scale(0.95);
+        }
+        
+        .play-button.playing {
+            background: #28a745;
+        }
+        
+        .play-button svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
         }
         
         .arabic-verb {
@@ -150,6 +189,9 @@
             color: #2c3e50;
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .example-arabic {
@@ -371,32 +413,74 @@
                             <tbody>
                                 <tr>
                                     <td class="pronoun-cell">ich</td>
-                                    <td class="german-verb">bin</td>
+                                    <td class="german-verb">
+                                        <span>bin</span>
+                                        <button class="play-button" onclick="playGerman('bin', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">أكون</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">du</td>
-                                    <td class="german-verb">bist</td>
+                                    <td class="german-verb">
+                                        <span>bist</span>
+                                        <button class="play-button" onclick="playGerman('bist', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">تكون</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">er/sie/es</td>
-                                    <td class="german-verb">ist</td>
+                                    <td class="german-verb">
+                                        <span>ist</span>
+                                        <button class="play-button" onclick="playGerman('ist', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">يكون/تكون</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">wir</td>
-                                    <td class="german-verb">sind</td>
+                                    <td class="german-verb">
+                                        <span>sind</span>
+                                        <button class="play-button" onclick="playGerman('sind', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">نكون</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">ihr</td>
-                                    <td class="german-verb">seid</td>
+                                    <td class="german-verb">
+                                        <span>seid</span>
+                                        <button class="play-button" onclick="playGerman('seid', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">تكونون</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">sie</td>
-                                    <td class="german-verb">sind</td>
+                                    <td class="german-verb">
+                                        <span>sind</span>
+                                        <button class="play-button" onclick="playGerman('sind', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">يكونون</td>
                                 </tr>
                             </tbody>
@@ -418,32 +502,74 @@
                             <tbody>
                                 <tr>
                                     <td class="pronoun-cell">ich</td>
-                                    <td class="german-verb">habe</td>
+                                    <td class="german-verb">
+                                        <span>habe</span>
+                                        <button class="play-button" onclick="playGerman('habe', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">أملك</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">du</td>
-                                    <td class="german-verb">hast</td>
+                                    <td class="german-verb">
+                                        <span>hast</span>
+                                        <button class="play-button" onclick="playGerman('hast', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">تملك</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">er/sie/es</td>
-                                    <td class="german-verb">hat</td>
+                                    <td class="german-verb">
+                                        <span>hat</span>
+                                        <button class="play-button" onclick="playGerman('hat', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">يملك/تملك</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">wir</td>
-                                    <td class="german-verb">haben</td>
+                                    <td class="german-verb">
+                                        <span>haben</span>
+                                        <button class="play-button" onclick="playGerman('haben', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">نملك</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">ihr</td>
-                                    <td class="german-verb">habt</td>
+                                    <td class="german-verb">
+                                        <span>habt</span>
+                                        <button class="play-button" onclick="playGerman('habt', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">تملكون</td>
                                 </tr>
                                 <tr>
                                     <td class="pronoun-cell">sie</td>
-                                    <td class="german-verb">haben</td>
+                                    <td class="german-verb">
+                                        <span>haben</span>
+                                        <button class="play-button" onclick="playGerman('haben', this)" title="Play pronunciation">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                            </svg>
+                                        </button>
+                                    </td>
                                     <td class="arabic-verb">يملكون</td>
                                 </tr>
                             </tbody>
@@ -456,62 +582,146 @@
                 <h2>Examples (أمثلة)</h2>
                 <div class="example-grid">
                     <div class="example-card">
-                        <div class="example-german">Ich bin Student.</div>
+                        <div class="example-german">
+                            Ich bin Student.
+                            <button class="play-button" onclick="playGerman('Ich bin Student.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">أنا طالب.</div>
                         <div class="example-english">I am a student.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Du bist Lehrer.</div>
+                        <div class="example-german">
+                            Du bist Lehrer.
+                            <button class="play-button" onclick="playGerman('Du bist Lehrer.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">أنت معلم.</div>
                         <div class="example-english">You are a teacher.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Er ist Arzt.</div>
+                        <div class="example-german">
+                            Er ist Arzt.
+                            <button class="play-button" onclick="playGerman('Er ist Arzt.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">هو طبيب.</div>
                         <div class="example-english">He is a doctor.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Sie ist müde.</div>
+                        <div class="example-german">
+                            Sie ist müde.
+                            <button class="play-button" onclick="playGerman('Sie ist müde.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">هي متعبة.</div>
                         <div class="example-english">She is tired.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Wir sind Freunde.</div>
+                        <div class="example-german">
+                            Wir sind Freunde.
+                            <button class="play-button" onclick="playGerman('Wir sind Freunde.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">نحن أصدقاء.</div>
                         <div class="example-english">We are friends.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Ihr seid glücklich.</div>
+                        <div class="example-german">
+                            Ihr seid glücklich.
+                            <button class="play-button" onclick="playGerman('Ihr seid glücklich.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">أنتم سعداء.</div>
                         <div class="example-english">You are happy.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Sie sind hier.</div>
+                        <div class="example-german">
+                            Sie sind hier.
+                            <button class="play-button" onclick="playGerman('Sie sind hier.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">هم هنا.</div>
                         <div class="example-english">They are here.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Ich habe ein Auto.</div>
+                        <div class="example-german">
+                            Ich habe ein Auto.
+                            <button class="play-button" onclick="playGerman('Ich habe ein Auto.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">أنا لدي سيارة.</div>
                         <div class="example-english">I have a car.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Du hast Zeit.</div>
+                        <div class="example-german">
+                            Du hast Zeit.
+                            <button class="play-button" onclick="playGerman('Du hast Zeit.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">أنت لديك وقت.</div>
                         <div class="example-english">You have time.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Er hat Hunger.</div>
+                        <div class="example-german">
+                            Er hat Hunger.
+                            <button class="play-button" onclick="playGerman('Er hat Hunger.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">هو جائع.</div>
                         <div class="example-english">He is hungry.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Sie hat ein Buch.</div>
+                        <div class="example-german">
+                            Sie hat ein Buch.
+                            <button class="play-button" onclick="playGerman('Sie hat ein Buch.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">هي لديها كتاب.</div>
                         <div class="example-english">She has a book.</div>
                     </div>
                     <div class="example-card">
-                        <div class="example-german">Wir haben Geld.</div>
+                        <div class="example-german">
+                            Wir haben Geld.
+                            <button class="play-button" onclick="playGerman('Wir haben Geld.', this)" title="Play pronunciation">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
                         <div class="example-arabic">نحن لدينا مال.</div>
                         <div class="example-english">We have money.</div>
                     </div>
@@ -544,50 +754,6 @@
                 </div>
             </div>
 
-            <div class="practice-section">
-                <h2>Practice (تدريب)</h2>
-                
-                <div class="practice-question">
-                    <h4>Question 1: What is the correct form of "sein" for "ich"?</h4>
-                    <div class="practice-options">
-                        <div class="practice-option" onclick="checkAnswer(this, 'bin')">bin</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'bist')">bist</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'ist')">ist</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'sind')">sind</div>
-                    </div>
-                </div>
-
-                <div class="practice-question">
-                    <h4>Question 2: What is the correct form of "haben" for "du"?</h4>
-                    <div class="practice-options">
-                        <div class="practice-option" onclick="checkAnswer(this, 'habe')">habe</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'hast')">hast</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'hat')">hat</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'habt')">habt</div>
-                    </div>
-                </div>
-
-                <div class="practice-question">
-                    <h4>Question 3: Complete: "Er _____ ein Buch"</h4>
-                    <div class="practice-options">
-                        <div class="practice-option" onclick="checkAnswer(this, 'hat')">hat</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'ist')">ist</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'habe')">habe</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'bin')">bin</div>
-                    </div>
-                </div>
-
-                <div class="practice-question">
-                    <h4>Question 4: Complete: "Wir _____ Studenten"</h4>
-                    <div class="practice-options">
-                        <div class="practice-option" onclick="checkAnswer(this, 'sind')">sind</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'haben')">haben</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'seid')">seid</div>
-                        <div class="practice-option" onclick="checkAnswer(this, 'ist')">ist</div>
-                    </div>
-                </div>
-            </div>
-
             <div class="navigation-buttons">
                 <a href="index.html" class="nav-button back-button">← Back to Home</a>
                 <a href="Lesson1.html" class="nav-button">← Previous Lesson</a>
@@ -603,89 +769,27 @@
     </footer>
 
     <script>
-        function checkAnswer(element, correctAnswer) {
-            const options = element.parentElement.querySelectorAll('.practice-option');
-            
-            // Disable all options
-            options.forEach(option => {
-                option.style.pointerEvents = 'none';
-            });
-            
-            // Check if the clicked option is correct
-            if (element.textContent === correctAnswer) {
-                element.classList.add('correct');
-                showNotification('Correct! Well done!', 'success');
-            } else {
-                element.classList.add('incorrect');
-                // Highlight the correct answer
-                options.forEach(option => {
-                    if (option.textContent === correctAnswer) {
-                        option.classList.add('correct');
-                    }
-                });
-                showNotification('Incorrect. Try again!', 'error');
+        // Text-to-speech for German listening
+        function playGerman(text, buttonElement) {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
             }
             
-            // Reset after 3 seconds
-            setTimeout(() => {
-                options.forEach(option => {
-                    option.classList.remove('correct', 'incorrect');
-                    option.style.pointerEvents = 'auto';
-                });
-            }, 3000);
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.rate = 0.9;
+            utterance.pitch = 1;
+            
+            const button = buttonElement || (event ? event.target.closest('.play-button') : null);
+            if (button) {
+                button.classList.add('playing');
+                utterance.onend = () => button.classList.remove('playing');
+                utterance.onerror = () => button.classList.remove('playing');
+            }
+            
+            window.speechSynthesis.speak(utterance);
         }
-
-        function showNotification(message, type = 'info') {
-            const existingNotification = document.querySelector('.notification');
-            if (existingNotification) {
-                existingNotification.remove();
-            }
-            
-            const notification = document.createElement('div');
-            notification.className = `notification notification-${type}`;
-            notification.textContent = message;
-            
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 1rem 1.5rem;
-                border-radius: 10px;
-                color: white;
-                font-weight: 500;
-                z-index: 1000;
-                transform: translateX(100%);
-                transition: transform 0.3s ease;
-                max-width: 300px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            `;
-            
-            switch(type) {
-                case 'success':
-                    notification.style.backgroundColor = '#28a745';
-                    break;
-                case 'error':
-                    notification.style.backgroundColor = '#dc3545';
-                    break;
-                default:
-                    notification.style.backgroundColor = '#17a2b8';
-            }
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.transform = 'translateX(0)';
-            }, 100);
-            
-            setTimeout(() => {
-                notification.style.transform = 'translateX(100%)';
-                setTimeout(() => {
-                    if (notification.parentNode) {
-                        notification.remove();
-                    }
-                }, 300);
-            }, 3000);
-        }
+        
     </script>
 </body>
 </html>

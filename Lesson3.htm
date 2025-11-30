@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Family and Home - Deutsch Lernen with Yousef Masri</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lesson-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .lesson-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .lesson-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .vocab-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .vocab-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .vocab-card:nth-child(even) {
+            border-left-color: #764ba2;
+        }
+        
+        .vocab-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .vocab-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 0.5rem;
+            align-items: center;
+        }
+        
+        .vocab-row:last-child {
+            margin-bottom: 0;
+        }
+        
+        .german-text-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .german-word {
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .play-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            padding: 0;
+            line-height: 1;
+        }
+        
+        .play-button:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+        }
+        
+        .play-button:active {
+            transform: scale(0.95);
+        }
+        
+        .play-button.playing {
+            background: #28a745;
+        }
+        
+        .play-button svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+        
+        .arabic-word {
+            font-size: 1.1rem;
+            color: #666;
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .article-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+        
+        .article-der {
+            background: #3498db;
+            color: white;
+        }
+        
+        .article-die {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .article-das {
+            background: #2ecc71;
+            color: white;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .examples-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .example-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .example-card:nth-child(even) {
+            border-left-color: #764ba2;
+        }
+        
+        .example-german {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .example-arabic {
+            color: #666;
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 0.5rem;
+        }
+        
+        .example-english {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .practice-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .practice-question {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-question h4 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .practice-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        
+        .practice-option {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .practice-option:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        .practice-option.correct {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+        
+        .practice-option.incorrect {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+        
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .back-button {
+            background: #6c757d;
+        }
+        
+        .back-button:hover {
+            background: #5a6268;
+        }
+        
+        @media (max-width: 768px) {
+            .lesson-container {
+                padding: 1rem;
+            }
+            
+            .lesson-header h1 {
+                font-size: 2rem;
+            }
+            
+            .vocab-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .example-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .practice-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="lesson-container">
+            <div class="lesson-header">
+                <h1>Lesson 3: Family and Home</h1>
+                <p>Learn vocabulary related to family members and home in German and Arabic</p>
+            </div>
+
+            <div class="vocab-section">
+                <h2 class="section-title">Family Members (أفراد العائلة)</h2>
+                <p>Learn the German words for family members with their Arabic translations.</p>
+                
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Vater</span>
+                                <button class="play-button" onclick="playGerman('Vater', this)" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الأب</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Mutter</span>
+                                <button class="play-button" onclick="playGerman('Mutter')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الأم</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Bruder</span>
+                                <button class="play-button" onclick="playGerman('Bruder')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الأخ</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Schwester</span>
+                                <button class="play-button" onclick="playGerman('Schwester')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الأخت</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Sohn</span>
+                                <button class="play-button" onclick="playGerman('Sohn')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الابن</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Tochter</span>
+                                <button class="play-button" onclick="playGerman('Tochter')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الابنة</span>
+                        </div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Großvater</span>
+                                <button class="play-button" onclick="playGerman('Großvater')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الجد</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Großmutter</span>
+                                <button class="play-button" onclick="playGerman('Großmutter')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الجدة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Onkel</span>
+                                <button class="play-button" onclick="playGerman('Onkel')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">العم / الخال</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Tante</span>
+                                <button class="play-button" onclick="playGerman('Tante')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">العمة / الخالة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Cousin</span>
+                                <button class="play-button" onclick="playGerman('Cousin')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">ابن العم / ابن الخال</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Cousine</span>
+                                <button class="play-button" onclick="playGerman('Cousine')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">ابنة العم / ابنة الخال</span>
+                        </div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Ehemann</span>
+                                <button class="play-button" onclick="playGerman('Ehemann')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الزوج</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Ehefrau</span>
+                                <button class="play-button" onclick="playGerman('Ehefrau')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الزوجة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Familie</span>
+                                <button class="play-button" onclick="playGerman('Familie')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">العائلة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Enkel</span>
+                                <button class="play-button" onclick="playGerman('Enkel')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الحفيد</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Enkelin</span>
+                                <button class="play-button" onclick="playGerman('Enkelin')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الحفيدة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Kind</span>
+                                <button class="play-button" onclick="playGerman('Kind')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الطفل</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vocab-section">
+                <h2 class="section-title">Home and Rooms (المنزل والغرف)</h2>
+                <p>Learn vocabulary related to home, rooms, and household items.</p>
+                
+                <div class="vocab-grid">
+                    <div class="vocab-card">
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Haus</span>
+                                <button class="play-button" onclick="playGerman('Haus')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">المنزل</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Wohnung</span>
+                                <button class="play-button" onclick="playGerman('Wohnung')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الشقة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Zimmer</span>
+                                <button class="play-button" onclick="playGerman('Zimmer')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الغرفة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Küche</span>
+                                <button class="play-button" onclick="playGerman('Küche')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">المطبخ</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Schlafzimmer</span>
+                                <button class="play-button" onclick="playGerman('Schlafzimmer')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">غرفة النوم</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Wohnzimmer</span>
+                                <button class="play-button" onclick="playGerman('Wohnzimmer')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">غرفة المعيشة</span>
+                        </div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Badezimmer</span>
+                                <button class="play-button" onclick="playGerman('Badezimmer')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الحمام</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Garten</span>
+                                <button class="play-button" onclick="playGerman('Garten')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الحديقة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Tür</span>
+                                <button class="play-button" onclick="playGerman('Tür')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الباب</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Fenster</span>
+                                <button class="play-button" onclick="playGerman('Fenster')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">النافذة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Tisch</span>
+                                <button class="play-button" onclick="playGerman('Tisch')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الطاولة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Stuhl</span>
+                                <button class="play-button" onclick="playGerman('Stuhl')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الكرسي</span>
+                        </div>
+                    </div>
+
+                    <div class="vocab-card">
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-das">das</span> Bett</span>
+                                <button class="play-button" onclick="playGerman('Bett')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">السرير</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Lampe</span>
+                                <button class="play-button" onclick="playGerman('Lampe')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">المصباح</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Schrank</span>
+                                <button class="play-button" onclick="playGerman('Schrank')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الخزانة</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Wand</span>
+                                <button class="play-button" onclick="playGerman('Wand')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الجدار</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-der">der</span> Boden</span>
+                                <button class="play-button" onclick="playGerman('Boden')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">الأرضية</span>
+                        </div>
+                        <div class="vocab-row">
+                            <div class="german-text-container">
+                                <span class="german-word"><span class="article-badge article-die">die</span> Decke</span>
+                                <button class="play-button" onclick="playGerman('Decke')" title="Play pronunciation">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="arabic-word">السقف</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="examples-section">
+                <h2 class="section-title">Examples (أمثلة)</h2>
+                <div class="example-grid">
+                    <div class="example-card">
+                        <div class="example-german">
+                            Mein Vater ist Arzt.
+                            <button class="play-button" onclick="playGerman('Mein Vater ist Arzt.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">والدي طبيب.</div>
+                        <div class="example-english">My father is a doctor.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Meine Mutter kocht in der Küche.
+                            <button class="play-button" onclick="playGerman('Meine Mutter kocht in der Küche.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">أمي تطبخ في المطبخ.</div>
+                        <div class="example-english">My mother cooks in the kitchen.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Ich habe einen Bruder und eine Schwester.
+                            <button class="play-button" onclick="playGerman('Ich habe einen Bruder und eine Schwester.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">لدي أخ وأخت.</div>
+                        <div class="example-english">I have a brother and a sister.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Wir wohnen in einem großen Haus.
+                            <button class="play-button" onclick="playGerman('Wir wohnen in einem großen Haus.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">نحن نسكن في منزل كبير.</div>
+                        <div class="example-english">We live in a big house.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Das Schlafzimmer ist sehr groß.
+                            <button class="play-button" onclick="playGerman('Das Schlafzimmer ist sehr groß.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">غرفة النوم كبيرة جداً.</div>
+                        <div class="example-english">The bedroom is very big.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Meine Familie ist sehr groß.
+                            <button class="play-button" onclick="playGerman('Meine Familie ist sehr groß.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">عائلتي كبيرة جداً.</div>
+                        <div class="example-english">My family is very large.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Der Tisch steht im Wohnzimmer.
+                            <button class="play-button" onclick="playGerman('Der Tisch steht im Wohnzimmer.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">الطاولة موجودة في غرفة المعيشة.</div>
+                        <div class="example-english">The table is in the living room.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Meine Großmutter besucht uns heute.
+                            <button class="play-button" onclick="playGerman('Meine Großmutter besucht uns heute.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">جدتي تزورنا اليوم.</div>
+                        <div class="example-english">My grandmother visits us today.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Das Badezimmer hat ein Fenster.
+                            <button class="play-button" onclick="playGerman('Das Badezimmer hat ein Fenster.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">الحمام لديه نافذة.</div>
+                        <div class="example-english">The bathroom has a window.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Mein Sohn spielt im Garten.
+                            <button class="play-button" onclick="playGerman('Mein Sohn spielt im Garten.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">ابني يلعب في الحديقة.</div>
+                        <div class="example-english">My son plays in the garden.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Die Tür ist geschlossen.
+                            <button class="play-button" onclick="playGerman('Die Tür ist geschlossen.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">الباب مغلق.</div>
+                        <div class="example-english">The door is closed.</div>
+                    </div>
+                    <div class="example-card">
+                        <div class="example-german">
+                            Meine Tochter schläft im Bett.
+                            <button class="play-button" onclick="playGerman('Meine Tochter schläft im Bett.', this)" title="Play pronunciation" style="width: 28px; height: 28px; margin-left: 0.5rem;">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="example-arabic">ابنتي تنام في السرير.</div>
+                        <div class="example-english">My daughter sleeps in the bed.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="practice-section">
+                <h2 class="section-title">Practice (تدريب)</h2>
+                
+                <div class="practice-question">
+                    <h4>Question 1: What is the German word for "الأم" (mother)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'Mutter')">Mutter</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Vater')">Vater</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Schwester')">Schwester</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Tochter')">Tochter</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 2: What is the German word for "المطبخ" (kitchen)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'Küche')">Küche</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Zimmer')">Zimmer</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Haus')">Haus</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Garten')">Garten</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 3: What is the correct article for "Bruder" (brother)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'der')">der</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'die')">die</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'das')">das</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'den')">den</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 4: What is the German word for "غرفة النوم" (bedroom)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'Schlafzimmer')">Schlafzimmer</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Wohnzimmer')">Wohnzimmer</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Badezimmer')">Badezimmer</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Zimmer')">Zimmer</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 5: What is the German word for "الجد" (grandfather)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'Großvater')">Großvater</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Großmutter')">Großmutter</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Vater')">Vater</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'Onkel')">Onkel</div>
+                    </div>
+                </div>
+
+                <div class="practice-question">
+                    <h4>Question 6: What is the correct article for "Haus" (house)?</h4>
+                    <div class="practice-options">
+                        <div class="practice-option" onclick="checkAnswer(this, 'das')">das</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'der')">der</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'die')">die</div>
+                        <div class="practice-option" onclick="checkAnswer(this, 'den')">den</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Back to Home</a>
+                <a href="Lesson2.html" class="nav-button">← Previous Lesson</a>
+                <a href="#" class="nav-button">Next Lesson →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Text-to-speech function for German pronunciation
+        function playGerman(text, buttonElement) {
+            // Stop any currently playing speech
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            
+            // Create speech synthesis utterance
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE'; // German language
+            utterance.rate = 0.9; // Slightly slower for clarity
+            utterance.pitch = 1;
+            
+            // Update button state if provided
+            const button = buttonElement || (event ? event.target.closest('.play-button') : null);
+            if (button) {
+                button.classList.add('playing');
+                
+                utterance.onend = function() {
+                    button.classList.remove('playing');
+                };
+                
+                utterance.onerror = function() {
+                    button.classList.remove('playing');
+                };
+            }
+            
+            // Speak the text
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        function checkAnswer(element, correctAnswer) {
+            const options = element.parentElement.querySelectorAll('.practice-option');
+            
+            // Disable all options
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+            });
+            
+            // Check if the clicked option is correct
+            if (element.textContent === correctAnswer) {
+                element.classList.add('correct');
+                showNotification('Correct! Well done!', 'success');
+            } else {
+                element.classList.add('incorrect');
+                // Highlight the correct answer
+                options.forEach(option => {
+                    if (option.textContent === correctAnswer) {
+                        option.classList.add('correct');
+                    }
+                });
+                showNotification('Incorrect. Try again!', 'error');
+            }
+            
+            // Reset after 3 seconds
+            setTimeout(() => {
+                options.forEach(option => {
+                    option.classList.remove('correct', 'incorrect');
+                    option.style.pointerEvents = 'auto';
+                });
+            }, 3000);
+        }
+
+        function showNotification(message, type = 'info') {
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 1rem 1.5rem;
+                border-radius: 10px;
+                color: white;
+                font-weight: 500;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                max-width: 300px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            `;
+            
+            switch(type) {
+                case 'success':
+                    notification.style.backgroundColor = '#28a745';
+                    break;
+                case 'error':
+                    notification.style.backgroundColor = '#dc3545';
+                    break;
+                default:
+                    notification.style.backgroundColor = '#17a2b8';
+            }
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+
