@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listen: Erste Woche im neuen Job - Deutsch Lernen</title>
+    <title>Mein Kaffee am Morgen - Deutsch Lernen</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -211,20 +211,21 @@
     <main>
         <div class="listen-container">
             <div class="listen-header">
-                <h1>Erste Woche im neuen Job</h1>
-                <p>Listen to a German text about the first week at a new job</p>
+                <h1>Mein Kaffee am Morgen</h1>
+                <p>Listen to a German text about morning coffee</p>
             </div>
 
             <div class="content-section">
                 <div class="image-container">
-                    <img src="Image/earstWoche.png" alt="First week at new job">
+                    <img src="Image/KaffeMorgen.png" alt="Morning coffee">
                 </div>
 
                 <div class="text-section">
                     <h2>German Text (النص الألماني)</h2>
                     <div class="german-text" id="germanText">
-                        Erste Woche im neuen Job<br><br>
-                        Heute beginne ich meinen neuen Job in einem kleinen Büro im Stadtzentrum. Ich bin sehr aufgeregt und etwas nervös am ersten Arbeitstag. Meine neuen Kollegen sind alle sehr nett und helfen mir bei den ersten Aufgaben. Die Chefin erklärt mir alle wichtigen Regeln und zeigt mir meinen Arbeitsplatz. In der Mittagspause gehen wir zusammen in ein Restaurant und sprechen über unsere Hobbys. Ich denke, ich werde mich hier schnell eingewöhnt haben und glücklich sein.
+                        Mein Kaffee am Morgen<br><br>
+                        Ich trinke jeden Morgen Kaffee. Der Kaffee ist warm und lecker. Ich sitze am Fenster und halte meine Tasse. Ich schaue nach draußen. Die Straße ist ruhig.<br><br>
+                        Der Kaffee macht mich wach. Ich fühle mich gut. Jeden Morgen brauche ich meinen Kaffee. Er ist wichtig für mich.
                     </div>
 
                     <button class="play-all-button" onclick="playAllText()" id="playAllButton" title="Play all text">
@@ -238,15 +239,16 @@
                 <div class="text-section">
                     <h2>Arabic Translation (الترجمة العربية)</h2>
                     <div class="arabic-text">
-                        الأسبوع الأول في الوظيفة الجديدة<br><br>
-                        اليوم أبدأ وظيفتي الجديدة في مكتب صغير في وسط المدينة. أنا متحمس جداً ومتوتر قليلاً في أول يوم عمل. زملائي الجدد جميعهم لطفاء جداً ويساعدونني في المهام الأولى. المديرة تشرح لي جميع القواعد المهمة وتُريني مكان عملي. في استراحة الغداء نذهب معاً إلى مطعم ونتحدث عن هواياتنا. أعتقد أنني سأعتاد هنا بسرعة وسأكون سعيداً.
+                        قهوتي في الصباح<br><br>
+                        أشرب القهوة كل صباح. القهوة دافئة ولذيذة. أجلس عند النافذة وأمسك فنجاني. أنظر إلى الخارج. الشارع هادئ.<br><br>
+                        القهوة تجعلني مستيقظاً. أشعر بالراحة. كل صباح أحتاج قهوتي. إنها مهمة بالنسبة لي.
                     </div>
                 </div>
             </div>
 
             <div class="navigation-buttons">
                 <a href="index.html" class="nav-button back-button">← Back to Home</a>
-                <a href="Listen.html" class="nav-button">More Listening →</a>
+                <a href="Listening.html" class="nav-button">More Listening →</a>
             </div>
         </div>
     </main>
@@ -260,7 +262,7 @@
     <script>
         // Text-to-speech function to play all text at once
         function playAllText() {
-            const fullText = "Erste Woche im neuen Job. Heute beginne ich meinen neuen Job in einem kleinen Büro im Stadtzentrum. Ich bin sehr aufgeregt und etwas nervös am ersten Arbeitstag. Meine neuen Kollegen sind alle sehr nett und helfen mir bei den ersten Aufgaben. Die Chefin erklärt mir alle wichtigen Regeln und zeigt mir meinen Arbeitsplatz. In der Mittagspause gehen wir zusammen in ein Restaurant und sprechen über unsere Hobbys. Ich denke, ich werde mich hier schnell eingewöhnt haben und glücklich sein.";
+            const fullText = "Mein Kaffee am Morgen. Ich trinke jeden Morgen Kaffee. Der Kaffee ist warm und lecker. Ich sitze am Fenster und halte meine Tasse. Ich schaue nach draußen. Die Straße ist ruhig. Der Kaffee macht mich wach. Ich fühle mich gut. Jeden Morgen brauche ich meinen Kaffee. Er ist wichtig für mich.";
             
             // Stop any currently playing speech
             if (window.speechSynthesis.speaking) {
@@ -315,5 +317,4 @@
     </script>
 </body>
 </html>
-
 
