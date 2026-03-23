@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rules Gender - Deutsch Lernen</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gender-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gender-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .gender-section h2 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .gender-section h2.masculine { border-color: #3498db; color: #3498db; }
+        .gender-section h2.feminine { border-color: #e74c3c; color: #e74c3c; }
+        .gender-section h2.neuter { border-color: #27ae60; color: #27ae60; }
+        
+        .arabic-content {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .gender-section.masculine .arabic-content { border-right: 4px solid #3498db; padding-right: 1rem; }
+        .gender-section.feminine .arabic-content { border-right: 4px solid #e74c3c; padding-right: 1rem; }
+        .gender-section.neuter .arabic-content { border-right: 4px solid #27ae60; padding-right: 1rem; }
+        
+        .example-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            background: #f8f9fa;
+            border-radius: 8px;
+            gap: 1.5rem;
+        }
+        
+        .example-german {
+            direction: ltr;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+        
+        .example-arabic {
+            direction: rtl;
+            text-align: right;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .examples-title {
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #333;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.7rem 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="gender-container">
+            <div class="page-header">
+                <h1>Rules Gender</h1>
+                <p>قواعد الجنس في اللغة الألمانية</p>
+            </div>
+
+            <!-- Section 1: Masculine Gender -->
+            <section class="gender-section masculine">
+                <h2 class="masculine">1 - Masculine Gender (der) — المذكر</h2>
+                <div class="arabic-content">
+                    <p>في اللغة الألمانية، المذكر يستخدم أداة التعريف (der). غالباً ما تكون الأسماء المذكرة هي أسماء الذكور، وأسماء أيام الأسبوع، والشهور، والفصول، وبعض الكلمات التي تنتهي بـ (-er)، (-ig)، (-ling)، (-ismus).</p>
+                </div>
+                <div class="examples-title">أمثلة / Beispiele:</div>
+                <div class="example-row">
+                    <span class="example-german">der Mann</span>
+                    <span class="example-arabic">الرجل</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">der Tisch</span>
+                    <span class="example-arabic">الطاولة</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">der Stuhl</span>
+                    <span class="example-arabic">الكرسي</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">der Lehrer</span>
+                    <span class="example-arabic">المعلم</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">der Montag</span>
+                    <span class="example-arabic">الإثنين</span>
+                </div>
+            </section>
+
+            <!-- Section 2: Feminine Gender -->
+            <section class="gender-section feminine">
+                <h2 class="feminine">2 - Feminine Gender (die) — المؤنث</h2>
+                <div class="arabic-content">
+                    <p>المؤنث يستخدم أداة التعريف (die). غالباً ما تكون الأسماء المؤنثة أسماء الإناث، وكثير من الكلمات التي تنتهي بـ (-e)، (-heit)، (-keit)، (-ung)، (-tion)، (-schaft). جميع الأعداد في الألمانية مؤنثة.</p>
+                </div>
+                <div class="examples-title">أمثلة / Beispiele:</div>
+                <div class="example-row">
+                    <span class="example-german">die Frau</span>
+                    <span class="example-arabic">المرأة</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">die Tür</span>
+                    <span class="example-arabic">الباب</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">die Lampe</span>
+                    <span class="example-arabic">المصباح</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">die Lehrerin</span>
+                    <span class="example-arabic">المعلمة</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">die Freiheit</span>
+                    <span class="example-arabic">الحرية</span>
+                </div>
+            </section>
+
+            <!-- Section 3: Neuter Gender -->
+            <section class="gender-section neuter">
+                <h2 class="neuter">3 - Neuter Gender (das) — المحايد</h2>
+                <div class="arabic-content">
+                    <p>المحايد يستخدم أداة التعريف (das). غالباً ما تكون الأسماء المحايدة أسماء الأطفال الصغار والحيوانات الصغيرة، والكلمات المنتهية بـ (-chen)، (-lein)، (-ment)، (-um). حروف الأبجدية في الألمانية محايدة أيضاً.</p>
+                </div>
+                <div class="examples-title">أمثلة / Beispiele:</div>
+                <div class="example-row">
+                    <span class="example-german">das Kind</span>
+                    <span class="example-arabic">الطفل</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">das Buch</span>
+                    <span class="example-arabic">الكتاب</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">das Haus</span>
+                    <span class="example-arabic">المنزل</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">das Mädchen</span>
+                    <span class="example-arabic">الفتاة</span>
+                </div>
+                <div class="example-row">
+                    <span class="example-german">das Museum</span>
+                    <span class="example-arabic">المتحف</span>
+                </div>
+            </section>
+
+            <a href="index.html" class="back-link">← العودة للصفحة الرئيسية</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
