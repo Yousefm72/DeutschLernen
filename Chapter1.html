@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapitel 1: Das Paket – Deutsch Lernen</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .chapter-container {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .chapter-header {
+            text-align: center;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .chapter-header h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.2rem;
+        }
+
+        .chapter-header p {
+            margin: 0;
+            opacity: 0.95;
+            font-size: 1.05rem;
+        }
+
+        .global-controls {
+            background: white;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.07);
+            border-left: 5px solid #667eea;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 1.5rem;
+        }
+
+        .global-controls label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .global-controls input[type="range"] {
+            width: 140px;
+        }
+
+        .play-chapter-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 6px 18px rgba(102, 126, 234, 0.35);
+        }
+
+        .play-chapter-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .play-chapter-btn.playing {
+            background: #28a745;
+        }
+
+        .story-line {
+            background: white;
+            border-radius: 14px;
+            padding: 1rem 1.25rem 1.15rem;
+            margin-bottom: 0.85rem;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            border-left: 4px solid #a78bfa;
+        }
+
+        .line-de {
+            font-size: 1.08rem;
+            line-height: 1.55;
+            color: #1f2937;
+        }
+
+        .playback-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.65rem 1rem;
+            margin-top: 0.55rem;
+            padding-top: 0.55rem;
+            border-top: 1px solid #eef2ff;
+        }
+
+        .playback-row .label-ar {
+            font-size: 0.8rem;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .play-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .play-button:hover {
+            background: #5b21b6;
+            transform: scale(1.05);
+        }
+
+        .play-button.playing {
+            background: #28a745;
+        }
+
+        .play-button svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .rate-wrap {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
+
+        .rate-wrap input[type="range"] {
+            width: 100px;
+            vertical-align: middle;
+        }
+
+        .line-ar {
+            margin-top: 0.65rem;
+            direction: rtl;
+            text-align: right;
+            color: #4b5563;
+            line-height: 1.75;
+            font-size: 1.02rem;
+        }
+
+        .summary-block {
+            margin-top: 2rem;
+            background: #fef3c7;
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            border-left: 5px solid #f59e0b;
+        }
+
+        .summary-block h2 {
+            margin: 0 0 0.75rem;
+            font-size: 1.2rem;
+            color: #92400e;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 22px rgba(102, 126, 234, 0.35);
+        }
+
+        .back-button {
+            background: #6c757d;
+        }
+
+        @media (max-width: 640px) {
+            .chapter-container { padding: 1.1rem; }
+            .global-controls { flex-direction: column; align-items: stretch; }
+            .rate-wrap input[type="range"] { width: 100%; max-width: 200px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Deutsch Lernen with Yousef Masri</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#lessons">Lessons</a></li>
+                    <li><a href="index.html#vocabulary">Vocabulary</a></li>
+                    <li><a href="index.html#grammar">Grammar</a></li>
+                    <li><a href="index.html#practice">Practice</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="chapter-container">
+            <div class="chapter-header">
+                <h1>Kapitel 1: Das Paket</h1>
+                <p>Geschichte mit deutscher Sprachausgabe und arabischer Übersetzung</p>
+            </div>
+
+            <div class="global-controls">
+                <button type="button" class="play-chapter-btn" id="playChapterBtn" title="Play whole chapter in order">▶ Kapitel abspielen</button>
+                <label title="Speed for “Kapitel abspielen”; each line has its own slider for single-line playback">
+                    Tempo (ganzes Kapitel)
+                    <input type="range" id="globalRate" min="0.65" max="1.15" step="0.05" value="0.85">
+                    <span id="globalRateVal">0.85</span>
+                </label>
+                <label title="Applies to all German playback">
+                    Tonhöhe (Pitch)
+                    <input type="range" id="globalPitch" min="0.8" max="1.2" step="0.05" value="1">
+                    <span id="globalPitchVal">1</span>
+                </label>
+            </div>
+
+            <div id="storyRoot"></div>
+
+            <div class="summary-block" id="summarySection"></div>
+
+            <div class="navigation-buttons">
+                <a href="index.html" class="nav-button back-button">← Zur Startseite</a>
+                <a href="Listening.html" class="nav-button">Weitere Hörtexte →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Deutsch Lernen with Yousef Masri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const PLAY_SVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>';
+        const STOP_SVG = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>';
+
+        const storyLines = [
+            { de: "Es klingelt an der Tür.", ar: "جرس الباب يدق." },
+            { de: "Andrew läuft zur Tür der Wohnung.", ar: "أندرو يركض إلى باب الشقة." },
+            { de: "Die Türklingel klingelt am Samstagmorgen nie.", ar: "جرس الباب لا يقرع أبداً صباح السبت." },
+            { de: "Andrew freut sich, zu sehen, wer an der Tür ist.", ar: "أندرو يتطلع ليرى من على الباب." },
+            { de: "Er öffnet die Tür.", ar: "يفتح الباب." },
+            { de: "Guten Morgen, kleiner Junge, sagt ein Bote.", ar: "«صباح الخير، يا صبي الصغير»، يقول ساعي." },
+            { de: "Der Mann ist in einer braunen Uniform gekleidet und trägt eine braune Schachtel.", ar: "الرجل يرتدي زياً بنياً ويحمل صندوقاً بنياً." },
+            { de: "Hallo, der Herr, sagt Andrew.", ar: "«مرحباً يا سيدي»، يقول أندرو." },
+            { de: "Ich habe ein Paket, sagt der Lieferant, für die Hauptstraße zehn.", ar: "«لدي طرد»، يقول عامل التوصيل، «للشارع الرئيسي رقم 10»." },
+            { de: "Das ist die Hauptstraße zehn, sagt Andrew.", ar: "«هذا هو الشارع الرئيسي 10»، يقول أندرو." },
+            { de: "Das Paket hat keinen Namen, sagt der Lieferant, es hat auch keine Wohnungsnummer.", ar: "«الطرد بلا اسم»، يقول عامل التوصيل، «ولا رقم شقة أيضاً»." },
+            { de: "Wie seltsam! sagt Andrew.", ar: "«يا له من غريب!» يقول أندرو." },
+            { de: "Kannst du es der richtigen Person geben? fragt der Mann.", ar: "«هل يمكنك تسليمه للشخص الصحيح؟» يسأل الرجل." },
+            { de: "Ich kann es versuchen, sagt Andrew.", ar: "«يمكنني أن أحاول»، يقول أندرو." },
+            { de: "Er ist erst zehn Jahre alt, aber er fühlt sich wichtig.", ar: "عمره عشر سنوات فقط، لكنه يشعر بأهمية." },
+            { de: "Vielen Dank, sagt der Lieferant. Er geht, Andrew bringt die Schachtel in sein Haus.", ar: "«شكراً جزيلاً»، يقول عامل التوصيل. يمضي، ويحمل أندرو الصندوق إلى منزله." },
+            { de: "Er starrt auf die Schachtel.", ar: "يتحدق إلى الصندوق." },
+            { de: "Sie hat ungefähr die Größe eines Schuhkartons.", ar: "حجمه تقريباً مثل صندوق الأحذية." },
+            { de: "Auf dem Paket steht kein Name, nur Hauptstraße zehn.", ar: "على الطرد لا اسم، فقط «الشارع الرئيسي 10»." },
+            { de: "Andrew öffnet den Pappkarton.", ar: "يفتح أندرو صندوق الكرتون." },
+            { de: "Er muss wissen, was drin ist, um den Besitzer zu finden.", ar: "يجب أن يعرف ما بداخله ليجد المالك." },
+            { de: "In dem Pappkarton befindet sich eine kleine Holzkiste.", ar: "داخل صندوق الكرتون صندوق خشبي صغير." },
+            { de: "Andrew öffnet die Holzkiste. In der Kiste sind zehn verschiedene Brillenpaare.", ar: "يفتح أندرو الصندوق الخشبي. فيه عشرة أزواج نظارات مختلفة." },
+            { de: "Sie haben unterschiedliche Farben: rosa und rot, grüne Pünktchen, schwarz und weiß.", ar: "ألوانها مختلفة: وردي وأحمر، ونقاط خضراء، وأسود وأبيض." },
+            { de: "Sie haben auch unterschiedliche Formen: rund, quadratisch und rechteckig.", ar: "أشكالها مختلفة أيضاً: دائرية ومربعة ومستطيلة." },
+            { de: "Er schließt die Schachtel und zieht seine Schuhe an.", ar: "يغلق الصندوق ويرتدي حذاءه." },
+            { de: "Tschüss, Mama! Ich bin gleich wieder da, schreit er.", ar: "«وداعاً يا أمي! سأعود حالاً»، يصرخ." },
+            { de: "Andrew klopft an die Tür gegenüber von seiner Wohnung.", ar: "يطرق أندرو باب الشقة المقابلة لشقته." },
+            { de: "Sie öffnet sich.", ar: "يفتح." },
+            { de: "Eine sehr alte Dame lächelt Andrew mit seiner Schachtel an.", ar: "سيدة عجوز جداً تبتسم لأندرو وهو يحمل صندوقه." },
+            { de: "Guten Morgen, Frau Smith! sagt Andrew.", ar: "«صباح الخير، السيدة سميث!» يقول أندرو." },
+            { de: "Wie geht es dir? fragt die alte Dame.", ar: "«كيف حالك؟» تسأل العجوز." },
+            { de: "Gut, danke! Und Ihnen? fragt Andrew.", ar: "«بخير، شكراً! وكيف حالكم؟» يسأل أندرو." },
+            { de: "Was hast du da? fragt die alte Dame.", ar: "«ما الذي معك؟» تسأل العجوز." },
+            { de: "Fräulein, das ist ein Paket. Es gehört jemandem in diesem Gebäude, aber ich weiß nicht wem, sagt Andrew.", ar: "«سيدتي، هذا طرد. يخص أحداً في هذا العمارة، لكنني لا أعرف من»، يقول أندرو." },
+            { de: "Es ist nicht für mich, sagt die alte Dame.", ar: "«ليس لي»، تقول العجوز." },
+            { de: "Unmöglich! Oh, okay sagt Andrew, enttäuscht.", ar: "«مستحيل!» «حسناً»، يقول أندرو، محبطاً." },
+            { de: "Die alte Dame trägt eine Brille. Er denkt sich, dass die Brillen ihr gut stehen würden.", ar: "العجوز ترتدي نظارة. يظن أن النظارات ستناسبها." },
+            { de: "Er dreht sich um, zu gehen. Komm später wieder, ruft die alte Dame, ich mache Kekse und ein paar Kekse sind für dich und deine Familie.", ar: "يلتفت ليمضي. «عد لاحقاً»، تنادي العجوز، «أصنع بسكويتاً وبعضه لك ولعائلتك»." },
+            { de: "Andrew geht die Treppe hoch.", ar: "يصعد أندرو الدرج." },
+            { de: "Sein Gebäude hat zwei Etagen.", ar: "عمارته طابقان." },
+            { de: "Er ist mit fast jedem im Gebäude befreundet.", ar: "هو صديق تقريباً للجميع في العمارة." },
+            { de: "Allerdings hat die Wohnung im ersten Stock eine neue Familie. Andrew kennt sie nicht. Er ist schüchtern, aber er klingelt.", ar: "لكن شقة الطابق الأول فيها عائلة جديدة. أندرو لا يعرفهم. خجول، لكنه يقرع الجرس." },
+            { de: "Ein braunhaariger Mann öffnet die Tür, er lächelt.", ar: "رجل ذو شعر بني يفتح الباب، يبتسم." },
+            { de: "Hallo! sagt der Mann.", ar: "«مرحباً!» يقول الرجل." },
+            { de: "Hallo, sagt Andrew, ich wohne unten, mein Name ist Andrew.", ar: "«مرحباً»، يقول أندرو، «أسكن في الأسفل، اسمي أندرو»." },
+            { de: "Schön, dich kennenzulernen, Andrew, sagt der Mann.", ar: "«تشرفنا بمعرفتك يا أندرو»، يقول الرجل." },
+            { de: "Wir sind neu im Haus, ich bin Herr Jones.", ar: "«نحن جدد في المنزل، أنا السيد جونز»." },
+            { de: "Freut mich auch, Sie kennenzulernen sagt Andrew.", ar: "«يسعدني لقاؤكم أيضاً»، يقول أندرو." },
+            { de: "Dieses Paket gehört jemandem in diesem Gebäude. Ist es Ihr Paket? Unmöglich! sagt der Mann.", ar: "«هذا الطرد لأحد في العمارة. هل هو لكم؟» «مستحيل!» يقول الرجل." },
+            { de: "Meine Familie und ich sind gerade erst hergezogen. Niemand kennt unsere Adresse.", ar: "«عائلتي وأنا انتقلنا للتو. لا أحد يعرف عنواننا»." },
+            { de: "Okay, sagt Andrew. Schön, Sie kennenzulernen. Die Tür schließt sich.", ar: "«حسناً»، يقول أندرو. «تشرفنا». يُغلق الباب." },
+            { de: "Ein weiteres Nein.", ar: "رفض آخر." },
+            { de: "Es sind nur noch zwei weitere Wohnungen übrig.", ar: "تبقى شقتان فقط." },
+            { de: "In der nächsten Wohnung lebt eine Familie.", ar: "في الشقة التالية تعيش عائلة." },
+            { de: "Die Tochter geht auf dieselbe Schule wie Andrew. Sie ist ein Jahr älter als Andrew. Ihr Name ist Diana.", ar: "الابنة في نفس مدرسة أندرو. أكبر منه بسنة. اسمها ديانا." },
+            { de: "Andrew findet sie sehr hübsch, er fühlt sich wieder schüchtern, aber er klopft an die Tür.", ar: "أندرو يجدها جميلة جداً، يشعر بالخجل من جديد، لكنه يطرق الباب." },
+            { de: "Ein hübsches, blondes Mädchen öffnet die Tür.", ar: "فتاة جميلة شقراء تفتح الباب." },
+            { de: "Hallo, Diana, Andrew lächelt.", ar: "«مرحباً يا ديانا»، يبتسم أندرو." },
+            { de: "Was ist los? fragt Diana.", ar: "«ما الأمر؟» تسأل ديانا." },
+            { de: "Ihr Pijama ist hellrosa und ihre Haare sind zerzaust.", ar: "بيجامتها وردية فاتحة وشعرها مشوش." },
+            { de: "Wie läuft es denn so? fragt Andrew.", ar: "«كيف الأمور؟» يسأل أندرو." },
+            { de: "Es geht so, sagte Diana.", ar: "«عادية»، قالت ديانا." },
+            { de: "Ich habe geschlafen, du hast mich geweckt.", ar: "«كنت نائمة، أيقظتني»." },
+            { de: "Es tut mir leid, sagt er schnell. Sein Gesicht ist rot.", ar: "«آسف»، يقول بسرعة. وجهه أحمر." },
+            { de: "Er fühlt sich besonders schüchtern.", ar: "يشعر بخجل شديد." },
+            { de: "Ich habe ein Paket. Wir wissen nicht, wem es gehört.", ar: "«عندي طرد. لا نعرف لمن»." },
+            { de: "Was ist drin? fragt Diana.", ar: "«ماذا بداخله؟» تسأل ديانا." },
+            { de: "Ein paar Gläser. Sie sind zum Lesen da, sagt Andrew.", ar: "«بعض النظارات. للقراءة»، يقول أندرو." },
+            { de: "Ich trage keine Brille, meine Mutter trägt auch keine, das Paket ist nicht für uns, sagt Diana.", ar: "«لا أرتدي نظارة، أمي أيضاً لا، الطرد ليس لنا»، تقول ديانا." },
+            { de: "Okay, sagt Andrew. Er winkt zum Abschied und geht die Treppe hoch.", ar: "«حسناً»، يقول أندرو. يلوح وداعاً ويصعد الدرج." },
+            { de: "Es gibt noch eine weitere Wohnung, die Wohnung im zweiten Stock.", ar: "تبقى شقة أخرى، شقة الطابق الثاني." },
+            { de: "Herr Edwards lebt allein in dieser Wohnung.", ar: "السيد إدواردز يعيش وحده في تلك الشقة." },
+            { de: "Er hat einen großen Papagei, der weiß, wie man redet.", ar: "عنده ببغاء كبير يعرف الكلام." },
+            { de: "Er hat auch vier Katzen und einen Hund.", ar: "عنده أيضاً أربع قطط وكلب." },
+            { de: "Seine Wohnung ist alt und dunkel.", ar: "شقته قديمة ومظلمة." },
+            { de: "Andrew hat Angst vor Herr Edwards.", ar: "أندرو يخاف من السيد إدواردز." },
+            { de: "Er klingelt an der Tür. Er muss herausfinden, wem das Paket gehört.", ar: "يرن الجرس. يجب أن يعرف لمن الطرد." },
+            { de: "Hallo, sagt Herr Edwards.", ar: "«مرحباً»، يقول السيد إدواردز." },
+            { de: "Sein Hund kommt zur Tür. Der Hund hilft Herr Edwards, da er blind ist.", ar: "كلبه يأتي إلى الباب. الكلب يساعد السيد إدواردز لأنه أعمى." },
+            { de: "Hallo, Herr Edwards. Ich bin es Andrew, sagt Andrew.", ar: "«مرحباً يا سيد إدواردز. أنا أندرو»، يقول أندرو." },
+            { de: "Herr Edwards hat die Augen geschlossen, er lächelt.", ar: "السيد إدواردز عيناه مغلقتان، يبتسم." },
+            { de: "Was gibt es Neues, Andrew? fragt er. Hmmm, denkt Andrew, vielleicht ist Herr Edwards nicht furchterregend.", ar: "«ما الجديد يا أندرو؟» يسأل. همم، يفكر أندرو، ربما السيد إدواردز ليس مخيفاً." },
+            { de: "Vielleicht ist Herr Edwards nur ein netter alter Mann, der allein lebt.", ar: "ربما هو مجرد رجل مسن لطيف يعيش وحده." },
+            { de: "Ich habe ein Paket und ich denke, es ist für Sie, sagt Andrew.", ar: "«عندي طرد وأظنه لكم»، يقول أندرو." },
+            { de: "Oh ja! Meine Lesebrillen, endlich! lächelt Herr Edwards.", ar: "«أوه نعم! نظارات القراءة، أخيراً!» يبتسم السيد إدواردز." },
+            { de: "Er streckt seine Hände aus.", ar: "يمد يديه." },
+            { de: "Andrew ist verwirrt.", ar: "أندرو مرتبك." },
+            { de: "Er sieht den Hund an. Er scheint auch zu lächeln.", ar: "ينظر إلى الكلب. يبدو أنه يبتسم أيضاً." },
+            { de: "Er gibt Herr Edwards die Schachtel.", ar: "يسلّم الصندوق للسيد إدواردز." },
+            { de: "Schön, dich zu sehen, sagt Herr Edwards. Sie auch, sagt Andrew.", ar: "«سعيد برؤيتك»، يقول السيد إدواردز. «وأنا أيضاً»، يقول أندرو." },
+            { de: "Vielleicht besucht er Herr Edwards wieder an einem anderen Tag.", ar: "ربما يزور السيد إدواردز يوماً آخر." },
+            { de: "Er dreht sich um und geht nach Hause.", ar: "يلتفت ويعود إلى منزله." }
+        ];
+
+        const summary = {
+            title: "ZUSAMMENFASSUNG / ملخص",
+            de: "Ein Junge, Andrew, bekommt ein Paket, das nicht für ihn bestimmt ist. Darin enthalten ist eine Schachtel mit Brillen. Er geht damit zu den Nachbarn, einen nach dem anderen, um herauszufinden, wem das Paket gehört. Er findet heraus, dass das Paket seinem Nachbarn Herr Edwards gehört, was ein wenig überraschend ist.",
+            ar: "يحصل الصبي أندرو على طرد ليس موجهاً إليه. بداخله صندوق فيه نظارات. يذهب بها إلى الجيران واحداً تلو الآخر ليعرف لمن الطرد. يكتشف أن الطرد لجاره السيد إدواردز، وهذا مفاجئ قليلاً."
+        };
+
+        function escapeHtml(s) {
+            const d = document.createElement('div');
+            d.textContent = s;
+            return d.innerHTML;
+        }
+
+        function renderStory() {
+            const root = document.getElementById('storyRoot');
+            storyLines.forEach((row, i) => {
+                const block = document.createElement('div');
+                block.className = 'story-line';
+                block.innerHTML =
+                    '<div class="line-de">' + escapeHtml(row.de) + '</div>' +
+                    '<div class="playback-row">' +
+                        '<span class="label-ar">تشغيل / إعدادات</span>' +
+                        '<button type="button" class="play-button" data-idx="' + i + '" title="German audio">' + PLAY_SVG + '</button>' +
+                        '<div class="rate-wrap">' +
+                            '<span>Speed</span>' +
+                            '<input type="range" class="line-rate" min="0.65" max="1.15" step="0.05" value="0.85" data-idx="' + i + '" aria-label="Speech rate for this line">' +
+                            '<span class="line-rate-val">0.85</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="line-ar">' + escapeHtml(row.ar) + '</div>';
+                root.appendChild(block);
+            });
+
+            root.querySelectorAll('.line-rate').forEach(sl => {
+                sl.addEventListener('input', () => {
+                    const v = sl.closest('.story-line').querySelector('.line-rate-val');
+                    if (v) v.textContent = parseFloat(sl.value).toFixed(2);
+                });
+            });
+
+            root.querySelectorAll('.play-button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const idx = parseInt(btn.getAttribute('data-idx'), 10);
+                    const line = btn.closest('.story-line');
+                    const rateInput = line.querySelector('.line-rate');
+                    const rate = rateInput ? parseFloat(rateInput.value) : 0.85;
+                    const pitch = parseFloat(document.getElementById('globalPitch').value) || 1;
+                    playLine(storyLines[idx].de, btn, rate, pitch);
+                });
+            });
+        }
+
+        function renderSummary() {
+            const sec = document.getElementById('summarySection');
+            sec.innerHTML =
+                '<h2>' + escapeHtml(summary.title) + '</h2>' +
+                '<div class="line-de" style="margin-bottom:0.75rem">' + escapeHtml(summary.de) + '</div>' +
+                '<div class="playback-row">' +
+                    '<button type="button" class="play-button" id="summaryPlay" title="Play summary">' + PLAY_SVG + '</button>' +
+                    '<div class="rate-wrap">' +
+                        '<span>Speed</span>' +
+                        '<input type="range" id="summaryRate" min="0.65" max="1.15" step="0.05" value="0.8">' +
+                        '<span id="summaryRateVal">0.80</span>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="line-ar">' + escapeHtml(summary.ar) + '</div>';
+
+            document.getElementById('summaryRate').addEventListener('input', e => {
+                document.getElementById('summaryRateVal').textContent = parseFloat(e.target.value).toFixed(2);
+            });
+            document.getElementById('summaryPlay').addEventListener('click', function () {
+                const r = parseFloat(document.getElementById('summaryRate').value);
+                const p = parseFloat(document.getElementById('globalPitch').value) || 1;
+                playLine(summary.de, this, r, p);
+            });
+        }
+
+        let currentBtn = null;
+
+        function playLine(text, buttonElement, rate, pitch) {
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                if (currentBtn) {
+                    currentBtn.classList.remove('playing');
+                    currentBtn.innerHTML = PLAY_SVG;
+                }
+            }
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.rate = rate;
+            utterance.pitch = pitch;
+
+            const btn = buttonElement;
+            currentBtn = btn;
+            if (btn) {
+                btn.classList.add('playing');
+                btn.innerHTML = STOP_SVG;
+                utterance.onend = () => {
+                    btn.classList.remove('playing');
+                    btn.innerHTML = PLAY_SVG;
+                    if (currentBtn === btn) currentBtn = null;
+                };
+                utterance.onerror = () => {
+                    btn.classList.remove('playing');
+                    btn.innerHTML = PLAY_SVG;
+                    if (currentBtn === btn) currentBtn = null;
+                };
+            }
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function stopChapter() {
+            window.speechSynthesis.cancel();
+            chapterQueue = [];
+            chapterIndex = 0;
+            const b = document.getElementById('playChapterBtn');
+            if (b) {
+                b.classList.remove('playing');
+                b.textContent = '▶ Kapitel abspielen';
+            }
+            document.querySelectorAll('.play-button.playing').forEach(x => {
+                x.classList.remove('playing');
+                x.innerHTML = PLAY_SVG;
+            });
+        }
+
+        let chapterQueue = [];
+        let chapterIndex = 0;
+
+        function playNextInChapter() {
+            if (chapterIndex >= chapterQueue.length) {
+                stopChapter();
+                return;
+            }
+            const { text, rate, pitch } = chapterQueue[chapterIndex];
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'de-DE';
+            utterance.rate = rate;
+            utterance.pitch = pitch;
+            utterance.onend = () => {
+                chapterIndex++;
+                playNextInChapter();
+            };
+            utterance.onerror = () => {
+                chapterIndex++;
+                playNextInChapter();
+            };
+            window.speechSynthesis.speak(utterance);
+        }
+
+        document.getElementById('globalRate').addEventListener('input', e => {
+            document.getElementById('globalRateVal').textContent = parseFloat(e.target.value).toFixed(2);
+        });
+
+        document.getElementById('globalPitch').addEventListener('input', e => {
+            document.getElementById('globalPitchVal').textContent = parseFloat(e.target.value).toFixed(2);
+        });
+
+        document.getElementById('playChapterBtn').addEventListener('click', function () {
+            if (window.speechSynthesis.speaking && chapterQueue.length) {
+                stopChapter();
+                return;
+            }
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+            }
+            document.querySelectorAll('.play-button.playing').forEach(x => {
+                x.classList.remove('playing');
+                x.innerHTML = PLAY_SVG;
+            });
+            currentBtn = null;
+
+            const chapterRate = parseFloat(document.getElementById('globalRate').value);
+            const pitch = parseFloat(document.getElementById('globalPitch').value) || 1;
+            chapterQueue = storyLines.map(row => ({
+                text: row.de,
+                rate: chapterRate,
+                pitch
+            }));
+            chapterIndex = 0;
+            this.classList.add('playing');
+            this.textContent = '■ Stop';
+            playNextInChapter();
+        });
+
+        renderStory();
+        renderSummary();
+    </script>
+</body>
+</html>
